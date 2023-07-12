@@ -1,4 +1,4 @@
-# OpenapiClient::Config
+# OmnicoreClient::Config
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::Config.new(
+instance = OmnicoreClient::Config.new(
   connection_parameter: null
 )
 ```

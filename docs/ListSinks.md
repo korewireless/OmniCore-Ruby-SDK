@@ -1,4 +1,4 @@
-# OpenapiClient::ListSinks
+# OmnicoreClient::ListSinks
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::ListSinks.new(
+instance = OmnicoreClient::ListSinks.new(
   sinks: null
 )
 ```

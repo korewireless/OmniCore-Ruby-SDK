@@ -1,4 +1,4 @@
-# OpenapiClient::BlockCommunicationBody
+# OmnicoreClient::BlockCommunicationBody
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::BlockCommunicationBody.new(
+instance = OmnicoreClient::BlockCommunicationBody.new(
   isblocked: null
 )
 ```

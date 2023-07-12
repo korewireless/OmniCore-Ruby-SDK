@@ -1,4 +1,4 @@
-# OpenapiClient::MqttConfig
+# OmnicoreClient::MqttConfig
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::MqttConfig.new(
+instance = OmnicoreClient::MqttConfig.new(
   mqtt_enabled_state: null
 )
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::SinkApi
+# OmnicoreClient::SinkApi
 
 All URIs are relative to *https://api.korewireless.com/omnicore*
 
@@ -22,9 +22,9 @@ Create a Sink
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'omnicore_client'
 # setup authorization
-OpenapiClient.configure do |config|
+OmnicoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -34,17 +34,17 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::SinkApi.new
+api_instance = OmnicoreClient::SinkApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 opts = {
-  sink: OpenapiClient::Sink.new # Sink | 
+  sink: OmnicoreClient::Sink.new # Sink | 
 }
 
 begin
   
   result = api_instance.create_sink(subscription_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue OmnicoreClient::ApiError => e
   puts "Error when calling SinkApi->create_sink: #{e}"
 end
 ```
@@ -62,7 +62,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Sink>
-rescue OpenapiClient::ApiError => e
+rescue OmnicoreClient::ApiError => e
   puts "Error when calling SinkApi->create_sink_with_http_info: #{e}"
 end
 ```
@@ -100,9 +100,9 @@ Delete a Sink
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'omnicore_client'
 # setup authorization
-OpenapiClient.configure do |config|
+OmnicoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -112,7 +112,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::SinkApi.new
+api_instance = OmnicoreClient::SinkApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 sink_id = 'sink_id_example' # String | Sink ID
 
@@ -120,7 +120,7 @@ begin
   
   result = api_instance.delete_sink(subscription_id, sink_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue OmnicoreClient::ApiError => e
   puts "Error when calling SinkApi->delete_sink: #{e}"
 end
 ```
@@ -138,7 +138,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue OmnicoreClient::ApiError => e
   puts "Error when calling SinkApi->delete_sink_with_http_info: #{e}"
 end
 ```
@@ -176,9 +176,9 @@ Get A Sink
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'omnicore_client'
 # setup authorization
-OpenapiClient.configure do |config|
+OmnicoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -188,7 +188,7 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::SinkApi.new
+api_instance = OmnicoreClient::SinkApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 sink_id = 'sink_id_example' # String | Sink ID
 
@@ -196,7 +196,7 @@ begin
   
   result = api_instance.get_a_sink(subscription_id, sink_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue OmnicoreClient::ApiError => e
   puts "Error when calling SinkApi->get_a_sink: #{e}"
 end
 ```
@@ -214,7 +214,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Sink>
-rescue OpenapiClient::ApiError => e
+rescue OmnicoreClient::ApiError => e
   puts "Error when calling SinkApi->get_a_sink_with_http_info: #{e}"
 end
 ```
@@ -252,9 +252,9 @@ Get Sinks
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'omnicore_client'
 # setup authorization
-OpenapiClient.configure do |config|
+OmnicoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -264,14 +264,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::SinkApi.new
+api_instance = OmnicoreClient::SinkApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 
 begin
   # Get All Sinks
   result = api_instance.get_sinks(subscription_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue OmnicoreClient::ApiError => e
   puts "Error when calling SinkApi->get_sinks: #{e}"
 end
 ```
@@ -289,7 +289,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListSinks>
-rescue OpenapiClient::ApiError => e
+rescue OmnicoreClient::ApiError => e
   puts "Error when calling SinkApi->get_sinks_with_http_info: #{e}"
 end
 ```

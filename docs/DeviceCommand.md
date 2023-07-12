@@ -1,4 +1,4 @@
-# OpenapiClient::DeviceCommand
+# OmnicoreClient::DeviceCommand
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::DeviceCommand.new(
+instance = OmnicoreClient::DeviceCommand.new(
   binary_data: null,
   subfolder: null
 )

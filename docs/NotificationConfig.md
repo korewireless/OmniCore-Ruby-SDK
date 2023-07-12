@@ -1,4 +1,4 @@
-# OpenapiClient::NotificationConfig
+# OmnicoreClient::NotificationConfig
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::NotificationConfig.new(
+instance = OmnicoreClient::NotificationConfig.new(
   pubsub_topic_name: null
 )
 ```

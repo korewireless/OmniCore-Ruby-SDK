@@ -1,4 +1,4 @@
-# OpenapiClient::GatewayConfig
+# OmnicoreClient::GatewayConfig
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::GatewayConfig.new(
+instance = OmnicoreClient::GatewayConfig.new(
   gateway_auth_method: null,
   gateway_type: null
 )

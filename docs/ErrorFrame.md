@@ -1,4 +1,4 @@
-# OpenapiClient::ErrorFrame
+# OmnicoreClient::ErrorFrame
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::ErrorFrame.new(
+instance = OmnicoreClient::ErrorFrame.new(
   code: null,
   details: null,
   message: null,

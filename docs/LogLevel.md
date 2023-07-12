@@ -1,4 +1,4 @@
-# OpenapiClient::LogLevel
+# OmnicoreClient::LogLevel
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::LogLevel.new()
+instance = OmnicoreClient::LogLevel.new()
 ```
 

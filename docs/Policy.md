@@ -1,4 +1,4 @@
-# OpenapiClient::Policy
+# OmnicoreClient::Policy
 
 ## Properties
 
@@ -18,9 +18,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::Policy.new(
+instance = OmnicoreClient::Policy.new(
   connect: null,
   publish_state: null,
   publish_events: null,

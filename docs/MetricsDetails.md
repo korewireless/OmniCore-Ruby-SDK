@@ -1,4 +1,4 @@
-# OpenapiClient::MetricsDetails
+# OmnicoreClient::MetricsDetails
 
 ## Properties
 
@@ -34,9 +34,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::MetricsDetails.new(
+instance = OmnicoreClient::MetricsDetails.new(
   no_of_messages_for30_minutes: null,
   no_of_messages_for48_hours: null,
   billable_bytes_received: null,

@@ -1,4 +1,4 @@
-# OpenapiClient::ErrorStatus
+# OmnicoreClient::ErrorStatus
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::ErrorStatus.new(
+instance = OmnicoreClient::ErrorStatus.new(
   code: null,
   details: null,
   message: null

@@ -1,4 +1,4 @@
-# OpenapiClient::HttpConfig
+# OmnicoreClient::HttpConfig
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::HttpConfig.new(
+instance = OmnicoreClient::HttpConfig.new(
   http_enabled_state: null
 )
 ```

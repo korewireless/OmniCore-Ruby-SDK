@@ -1,4 +1,4 @@
-# OpenapiClient::EventNotificationConfig
+# OmnicoreClient::EventNotificationConfig
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::EventNotificationConfig.new(
+instance = OmnicoreClient::EventNotificationConfig.new(
   pubsub_topic_name: null,
   subfolder_matches: null
 )

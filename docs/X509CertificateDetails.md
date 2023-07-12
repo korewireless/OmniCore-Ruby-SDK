@@ -1,4 +1,4 @@
-# OpenapiClient::X509CertificateDetails
+# OmnicoreClient::X509CertificateDetails
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::X509CertificateDetails.new(
+instance = OmnicoreClient::X509CertificateDetails.new(
   expiry_time: null,
   issuer: null,
   public_key_type: null,

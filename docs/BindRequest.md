@@ -1,4 +1,4 @@
-# OpenapiClient::BindRequest
+# OmnicoreClient::BindRequest
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::BindRequest.new(
+instance = OmnicoreClient::BindRequest.new(
   device_id: null,
   gateway_id: null
 )

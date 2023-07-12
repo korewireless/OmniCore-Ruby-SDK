@@ -1,4 +1,4 @@
-# OpenapiClient::MetricsApi
+# OmnicoreClient::MetricsApi
 
 All URIs are relative to *https://api.korewireless.com/omnicore*
 
@@ -19,9 +19,9 @@ get metrics
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'omnicore_client'
 # setup authorization
-OpenapiClient.configure do |config|
+OmnicoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -31,14 +31,14 @@ OpenapiClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::MetricsApi.new
+api_instance = OmnicoreClient::MetricsApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 
 begin
   
   result = api_instance.get_metrics(subscription_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue OmnicoreClient::ApiError => e
   puts "Error when calling MetricsApi->get_metrics: #{e}"
 end
 ```
@@ -56,7 +56,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Metrics>
-rescue OpenapiClient::ApiError => e
+rescue OmnicoreClient::ApiError => e
   puts "Error when calling MetricsApi->get_metrics_with_http_info: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::DeviceCredential
+# OmnicoreClient::DeviceCredential
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::DeviceCredential.new(
+instance = OmnicoreClient::DeviceCredential.new(
   expiration_time: null,
   id: null,
   public_key: null

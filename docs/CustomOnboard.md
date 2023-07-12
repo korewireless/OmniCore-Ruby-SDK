@@ -1,4 +1,4 @@
-# OpenapiClient::CustomOnboard
+# OmnicoreClient::CustomOnboard
 
 ## Properties
 
@@ -38,9 +38,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::CustomOnboard.new(
+instance = OmnicoreClient::CustomOnboard.new(
   id: null,
   name: null,
   num_id: null,

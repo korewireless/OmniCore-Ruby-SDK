@@ -1,4 +1,4 @@
-# OpenapiClient::GenericErrorResponse
+# OmnicoreClient::GenericErrorResponse
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::GenericErrorResponse.new(
+instance = OmnicoreClient::GenericErrorResponse.new(
   error: null
 )
 ```

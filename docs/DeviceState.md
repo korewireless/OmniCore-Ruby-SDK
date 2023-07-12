@@ -1,4 +1,4 @@
-# OpenapiClient::DeviceState
+# OmnicoreClient::DeviceState
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::DeviceState.new(
+instance = OmnicoreClient::DeviceState.new(
   binary_data: null,
   update_time: null
 )

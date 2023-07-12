@@ -1,4 +1,4 @@
-# OpenapiClient::Info
+# OmnicoreClient::Info
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::Info.new(
+instance = OmnicoreClient::Info.new(
   info: null
 )
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::PublicKeyCertificate
+# OmnicoreClient::PublicKeyCertificate
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::PublicKeyCertificate.new(
+instance = OmnicoreClient::PublicKeyCertificate.new(
   certificate: null,
   format: null,
   x509_details: null

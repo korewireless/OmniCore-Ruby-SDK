@@ -1,4 +1,4 @@
-# OpenapiClient::RegistryCredential
+# OmnicoreClient::RegistryCredential
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'omnicore_client'
 
-instance = OpenapiClient::RegistryCredential.new(
+instance = OmnicoreClient::RegistryCredential.new(
   public_key_certificate: null,
   id: null
 )
