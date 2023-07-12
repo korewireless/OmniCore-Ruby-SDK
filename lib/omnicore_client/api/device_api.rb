@@ -12,7 +12,7 @@ OpenAPI Generator version: 6.4.0-SNAPSHOT
 
 require 'cgi'
 
-module OmnicoreClient
+module OmniCoreClient
   class DeviceApi
     attr_accessor :api_client
 

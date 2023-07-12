@@ -1,4 +1,4 @@
-# OmnicoreClient::Device
+# OmniCoreClient::Device
 
 ## Properties
 
@@ -38,7 +38,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::Device.new(
+instance = OmniCoreClient::Device.new(
   id: null,
   name: null,
   num_id: null,

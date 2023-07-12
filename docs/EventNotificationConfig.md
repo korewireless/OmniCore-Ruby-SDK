@@ -1,4 +1,4 @@
-# OmnicoreClient::EventNotificationConfig
+# OmniCoreClient::EventNotificationConfig
 
 ## Properties
 
@@ -12,7 +12,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::EventNotificationConfig.new(
+instance = OmniCoreClient::EventNotificationConfig.new(
   pubsub_topic_name: null,
   subfolder_matches: null
 )

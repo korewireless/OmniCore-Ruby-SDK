@@ -1,4 +1,4 @@
-# OmnicoreClient::NotificationConfig
+# OmniCoreClient::NotificationConfig
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::NotificationConfig.new(
+instance = OmniCoreClient::NotificationConfig.new(
   pubsub_topic_name: null
 )
 ```

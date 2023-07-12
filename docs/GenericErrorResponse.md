@@ -1,4 +1,4 @@
-# OmnicoreClient::GenericErrorResponse
+# OmniCoreClient::GenericErrorResponse
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::GenericErrorResponse.new(
+instance = OmniCoreClient::GenericErrorResponse.new(
   error: null
 )
 ```

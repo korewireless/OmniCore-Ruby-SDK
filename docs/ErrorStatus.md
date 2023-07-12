@@ -1,4 +1,4 @@
-# OmnicoreClient::ErrorStatus
+# OmniCoreClient::ErrorStatus
 
 ## Properties
 
@@ -13,7 +13,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::ErrorStatus.new(
+instance = OmniCoreClient::ErrorStatus.new(
   code: null,
   details: null,
   message: null

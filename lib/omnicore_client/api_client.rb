@@ -17,7 +17,7 @@ require 'tempfile'
 require 'time'
 require 'typhoeus'
 
-module OmnicoreClient
+module OmniCoreClient
   class ApiClient
     # The Configuration object holding settings to be used in the API client.
     attr_accessor :config
@@ -278,7 +278,7 @@ module OmnicoreClient
         end
       else
         # models (e.g. Pet) or oneOf
-        klass = OmnicoreClient.const_get(return_type)
+        klass = OmniCoreClient.const_get(return_type)
         klass.respond_to?(:openapi_one_of) ? klass.build(data) : klass.build_from_hash(data)
       end
     end

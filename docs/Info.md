@@ -1,4 +1,4 @@
-# OmnicoreClient::Info
+# OmniCoreClient::Info
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::Info.new(
+instance = OmniCoreClient::Info.new(
   info: null
 )
 ```

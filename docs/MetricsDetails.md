@@ -1,4 +1,4 @@
-# OmnicoreClient::MetricsDetails
+# OmniCoreClient::MetricsDetails
 
 ## Properties
 
@@ -36,7 +36,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::MetricsDetails.new(
+instance = OmniCoreClient::MetricsDetails.new(
   no_of_messages_for30_minutes: null,
   no_of_messages_for48_hours: null,
   billable_bytes_received: null,

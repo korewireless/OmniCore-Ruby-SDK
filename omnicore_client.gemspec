@@ -17,7 +17,7 @@ require "omnicore_client/version"
 
 Gem::Specification.new do |s|
   s.name        = "omnicore_client"
-  s.version     = OmnicoreClient::VERSION
+  s.version     = OmniCoreClient::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["korewireless"]
   s.email       = ["omnicoresupport@korewireless.com"]

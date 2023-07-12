@@ -13,7 +13,7 @@ OpenAPI Generator version: 6.4.0-SNAPSHOT
 require 'date'
 require 'time'
 
-module OmnicoreClient
+module OmniCoreClient
   class BindRequestIdsGateway
     attr_accessor :device_ids
 
@@ -50,13 +50,13 @@ module OmnicoreClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `OmnicoreClient::BindRequestIdsGateway` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `OmniCoreClient::BindRequestIdsGateway` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `OmnicoreClient::BindRequestIdsGateway`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `OmniCoreClient::BindRequestIdsGateway`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -184,7 +184,7 @@ module OmnicoreClient
         end
       else # model
         # models (e.g. Pet) or oneOf
-        klass = OmnicoreClient.const_get(type)
+        klass = OmniCoreClient.const_get(type)
         klass.respond_to?(:openapi_one_of) ? klass.build(value) : klass.build_from_hash(value)
       end
     end

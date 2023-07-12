@@ -1,4 +1,4 @@
-# OmnicoreClient::MqttConfig
+# OmniCoreClient::MqttConfig
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::MqttConfig.new(
+instance = OmniCoreClient::MqttConfig.new(
   mqtt_enabled_state: null
 )
 ```

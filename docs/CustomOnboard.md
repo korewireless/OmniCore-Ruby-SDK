@@ -1,4 +1,4 @@
-# OmnicoreClient::CustomOnboard
+# OmniCoreClient::CustomOnboard
 
 ## Properties
 
@@ -40,7 +40,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::CustomOnboard.new(
+instance = OmniCoreClient::CustomOnboard.new(
   id: null,
   name: null,
   num_id: null,

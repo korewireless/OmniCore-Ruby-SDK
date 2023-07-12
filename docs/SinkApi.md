@@ -1,4 +1,4 @@
-# OmnicoreClient::SinkApi
+# OmniCoreClient::SinkApi
 
 All URIs are relative to *https://api.korewireless.com/omnicore*
 
@@ -24,7 +24,7 @@ Create a Sink
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -34,17 +34,17 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::SinkApi.new
+api_instance = OmniCoreClient::SinkApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 opts = {
-  sink: OmnicoreClient::Sink.new # Sink | 
+  sink: OmniCoreClient::Sink.new # Sink | 
 }
 
 begin
   
   result = api_instance.create_sink(subscription_id, opts)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling SinkApi->create_sink: #{e}"
 end
 ```
@@ -62,7 +62,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Sink>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling SinkApi->create_sink_with_http_info: #{e}"
 end
 ```
@@ -102,7 +102,7 @@ Delete a Sink
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -112,7 +112,7 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::SinkApi.new
+api_instance = OmniCoreClient::SinkApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 sink_id = 'sink_id_example' # String | Sink ID
 
@@ -120,7 +120,7 @@ begin
   
   result = api_instance.delete_sink(subscription_id, sink_id)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling SinkApi->delete_sink: #{e}"
 end
 ```
@@ -138,7 +138,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling SinkApi->delete_sink_with_http_info: #{e}"
 end
 ```
@@ -178,7 +178,7 @@ Get A Sink
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -188,7 +188,7 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::SinkApi.new
+api_instance = OmniCoreClient::SinkApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 sink_id = 'sink_id_example' # String | Sink ID
 
@@ -196,7 +196,7 @@ begin
   
   result = api_instance.get_a_sink(subscription_id, sink_id)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling SinkApi->get_a_sink: #{e}"
 end
 ```
@@ -214,7 +214,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Sink>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling SinkApi->get_a_sink_with_http_info: #{e}"
 end
 ```
@@ -254,7 +254,7 @@ Get Sinks
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -264,14 +264,14 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::SinkApi.new
+api_instance = OmniCoreClient::SinkApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 
 begin
   # Get All Sinks
   result = api_instance.get_sinks(subscription_id)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling SinkApi->get_sinks: #{e}"
 end
 ```
@@ -289,7 +289,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListSinks>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling SinkApi->get_sinks_with_http_info: #{e}"
 end
 ```

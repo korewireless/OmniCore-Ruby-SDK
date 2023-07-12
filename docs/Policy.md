@@ -1,4 +1,4 @@
-# OmnicoreClient::Policy
+# OmniCoreClient::Policy
 
 ## Properties
 
@@ -20,7 +20,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::Policy.new(
+instance = OmniCoreClient::Policy.new(
   connect: null,
   publish_state: null,
   publish_events: null,

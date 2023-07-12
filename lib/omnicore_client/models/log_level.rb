@@ -13,7 +13,7 @@ OpenAPI Generator version: 6.4.0-SNAPSHOT
 require 'date'
 require 'time'
 
-module OmnicoreClient
+module OmniCoreClient
   class LogLevel
     INFO = "INFO".freeze
     ERROR = "ERROR".freeze

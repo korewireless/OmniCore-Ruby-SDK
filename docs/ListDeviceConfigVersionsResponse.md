@@ -1,4 +1,4 @@
-# OmnicoreClient::ListDeviceConfigVersionsResponse
+# OmniCoreClient::ListDeviceConfigVersionsResponse
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::ListDeviceConfigVersionsResponse.new(
+instance = OmniCoreClient::ListDeviceConfigVersionsResponse.new(
   device_configs: null
 )
 ```

@@ -1,4 +1,4 @@
-# OmnicoreClient::ListDevicesResponse
+# OmniCoreClient::ListDevicesResponse
 
 ## Properties
 
@@ -14,7 +14,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::ListDevicesResponse.new(
+instance = OmniCoreClient::ListDevicesResponse.new(
   devices: null,
   page_number: null,
   page_size: null,

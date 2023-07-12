@@ -13,7 +13,7 @@ OpenAPI Generator version: 6.4.0-SNAPSHOT
 require 'date'
 require 'time'
 
-module OmnicoreClient
+module OmniCoreClient
   class HttpConfig
     # HttpEnabledState: If enabled, allows devices to use DeviceService via the HTTP protocol. Otherwise, any requests to DeviceService will fail for this registry.  Possible values:   \"HTTP_STATE_UNSPECIFIED\" - No HTTP state specified. If not specified, DeviceService will be enabled by default.   \"HTTP_ENABLED\" - Enables DeviceService (HTTP) service for the registry.   \"HTTP_DISABLED\" - Disables DeviceService (HTTP) service for the registry.
     attr_accessor :http_enabled_state
@@ -69,13 +69,13 @@ module OmnicoreClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `OmnicoreClient::HttpConfig` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `OmniCoreClient::HttpConfig` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `OmnicoreClient::HttpConfig`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `OmniCoreClient::HttpConfig`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -198,7 +198,7 @@ module OmnicoreClient
         end
       else # model
         # models (e.g. Pet) or oneOf
-        klass = OmnicoreClient.const_get(type)
+        klass = OmniCoreClient.const_get(type)
         klass.respond_to?(:openapi_one_of) ? klass.build(value) : klass.build_from_hash(value)
       end
     end

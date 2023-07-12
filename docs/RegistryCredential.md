@@ -1,4 +1,4 @@
-# OmnicoreClient::RegistryCredential
+# OmniCoreClient::RegistryCredential
 
 ## Properties
 
@@ -12,7 +12,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::RegistryCredential.new(
+instance = OmniCoreClient::RegistryCredential.new(
   public_key_certificate: null,
   id: null
 )

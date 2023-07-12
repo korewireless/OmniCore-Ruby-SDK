@@ -59,10 +59,10 @@ require 'omnicore_client/api/metrics_api'
 require 'omnicore_client/api/registry_api'
 require 'omnicore_client/api/sink_api'
 
-module OmnicoreClient
+module OmniCoreClient
   class << self
     # Customize default settings for the SDK using block.
-    #   OmnicoreClient.configure do |config|
+    #   OmniCoreClient.configure do |config|
     #     config.username = "xxx"
     #     config.password = "xxx"
     #   end

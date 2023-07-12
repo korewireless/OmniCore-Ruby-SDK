@@ -1,4 +1,4 @@
-# OmnicoreClient::ErrorFrame
+# OmniCoreClient::ErrorFrame
 
 ## Properties
 
@@ -14,7 +14,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::ErrorFrame.new(
+instance = OmniCoreClient::ErrorFrame.new(
   code: null,
   details: null,
   message: null,

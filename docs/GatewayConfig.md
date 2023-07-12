@@ -1,4 +1,4 @@
-# OmnicoreClient::GatewayConfig
+# OmniCoreClient::GatewayConfig
 
 ## Properties
 
@@ -12,7 +12,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::GatewayConfig.new(
+instance = OmniCoreClient::GatewayConfig.new(
   gateway_auth_method: null,
   gateway_type: null
 )

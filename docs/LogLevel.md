@@ -1,4 +1,4 @@
-# OmnicoreClient::LogLevel
+# OmniCoreClient::LogLevel
 
 ## Properties
 
@@ -10,6 +10,6 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::LogLevel.new()
+instance = OmniCoreClient::LogLevel.new()
 ```
 

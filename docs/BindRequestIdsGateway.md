@@ -1,4 +1,4 @@
-# OmnicoreClient::BindRequestIdsGateway
+# OmniCoreClient::BindRequestIdsGateway
 
 ## Properties
 
@@ -12,7 +12,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::BindRequestIdsGateway.new(
+instance = OmniCoreClient::BindRequestIdsGateway.new(
   device_ids: null,
   gateway_id: null
 )

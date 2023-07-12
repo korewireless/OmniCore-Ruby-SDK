@@ -10,6 +10,6 @@ OpenAPI Generator version: 6.4.0-SNAPSHOT
 
 =end
 
-module OmnicoreClient
+module OmniCoreClient
   VERSION = '1.8.1'
 end

@@ -13,7 +13,7 @@ OpenAPI Generator version: 6.4.0-SNAPSHOT
 require 'date'
 require 'time'
 
-module OmnicoreClient
+module OmniCoreClient
   class PublicKeyCredential
     # Format: The format of the key.  Possible values:   \"UNSPECIFIED_PUBLIC_KEY_FORMAT\" - The format has not been specified. This is an invalid default value and must not be used.   \"RSA_PEM\" - An RSA public key encoded in base64, and wrapped by `-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----`. This can be used to verify `RS256` signatures in JWT tokens ([RFC7518]( https://www.ietf.org/rfc/rfc7518.txt)).   \"RSA_X509_PEM\" - As RSA_PEM, but wrapped in an X.509v3 certificate ([RFC5280]( https://www.ietf.org/rfc/rfc5280.txt)), encoded in base64, and wrapped by `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----`.   \"ES256_PEM\" - Public key for the ECDSA algorithm using P-256 and SHA-256, encoded in base64, and wrapped by `-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----`. This can be used to verify JWT tokens with the `ES256` algorithm ([RFC7518](https://www.ietf.org/rfc/rfc7518.txt)). This curve is defined in [OpenSSL](https://www.openssl.org/) as the `prime256v1` curve.   \"ES256_X509_PEM\" - As ES256_PEM, but wrapped in an X.509v3 certificate ([RFC5280]( https://www.ietf.org/rfc/rfc5280.txt)), encoded in base64, and wrapped by `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----`.
     attr_accessor :format
@@ -74,13 +74,13 @@ module OmnicoreClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `OmnicoreClient::PublicKeyCredential` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `OmniCoreClient::PublicKeyCredential` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `OmnicoreClient::PublicKeyCredential`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `OmniCoreClient::PublicKeyCredential`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -213,7 +213,7 @@ module OmnicoreClient
         end
       else # model
         # models (e.g. Pet) or oneOf
-        klass = OmnicoreClient.const_get(type)
+        klass = OmniCoreClient.const_get(type)
         klass.respond_to?(:openapi_one_of) ? klass.build(value) : klass.build_from_hash(value)
       end
     end

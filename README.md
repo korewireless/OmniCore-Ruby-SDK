@@ -1,6 +1,6 @@
 # omnicore_client
 
-OmnicoreClient - the Ruby gem for the OmniCore Model and State Management API
+OmniCoreClient - the Ruby gem for the OmniCore Model and State Management API
 
 This is an OmniCore Model and State Management server.
 
@@ -58,7 +58,7 @@ Please follow the [installation](#installation) procedure and then run the follo
 require 'omnicore_client'
 
 # Setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -70,15 +70,15 @@ OmnicoreClient.configure do |config|
   config.access_token_getter = -> { 'YOUR TOKEN GETTER PROC' } 
 end
 
-api_instance = OmnicoreClient::DeviceApi.new
+api_instance = OmniCoreClient::DeviceApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
-bind = OmnicoreClient::BindRequest.new({device_id: 'device_id_example', gateway_id: 'gateway_id_example'}) # BindRequest | application/json
+bind = OmniCoreClient::BindRequest.new({device_id: 'device_id_example', gateway_id: 'gateway_id_example'}) # BindRequest | application/json
 
 begin
   result = api_instance.bind_device(subscription_id, registry_id, bind)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Exception when calling DeviceApi->bind_device: #{e}"
 end
 
@@ -90,71 +90,71 @@ All URIs are relative to *https://api.korewireless.com/omnicore*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*OmnicoreClient::DeviceApi* | [**bind_device**](docs/DeviceApi.md#bind_device) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/bindDeviceToGateway | 
-*OmnicoreClient::DeviceApi* | [**bind_devices**](docs/DeviceApi.md#bind_devices) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/bindDevicesToGateway | 
-*OmnicoreClient::DeviceApi* | [**block_device_communcation**](docs/DeviceApi.md#block_device_communcation) | **PUT** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/communication | 
-*OmnicoreClient::DeviceApi* | [**create_device**](docs/DeviceApi.md#create_device) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/devices | 
-*OmnicoreClient::DeviceApi* | [**delete_device**](docs/DeviceApi.md#delete_device) | **DELETE** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
-*OmnicoreClient::DeviceApi* | [**get_config**](docs/DeviceApi.md#get_config) | **GET** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/configVersions | 
-*OmnicoreClient::DeviceApi* | [**get_device**](docs/DeviceApi.md#get_device) | **GET** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
-*OmnicoreClient::DeviceApi* | [**get_devices**](docs/DeviceApi.md#get_devices) | **GET** /subscriptions/{subscriptionId}/registries/{registryId}/devices | 
-*OmnicoreClient::DeviceApi* | [**get_states**](docs/DeviceApi.md#get_states) | **GET** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states | 
-*OmnicoreClient::DeviceApi* | [**send_command_to_device**](docs/DeviceApi.md#send_command_to_device) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice | 
-*OmnicoreClient::DeviceApi* | [**un_bind_device**](docs/DeviceApi.md#un_bind_device) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway | 
-*OmnicoreClient::DeviceApi* | [**un_bind_devices**](docs/DeviceApi.md#un_bind_devices) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway | 
-*OmnicoreClient::DeviceApi* | [**update_configuration_to_device**](docs/DeviceApi.md#update_configuration_to_device) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice | 
-*OmnicoreClient::DeviceApi* | [**update_custom_onboard_request**](docs/DeviceApi.md#update_custom_onboard_request) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateCustomOnboardRequest | 
-*OmnicoreClient::DeviceApi* | [**update_device**](docs/DeviceApi.md#update_device) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
-*OmnicoreClient::MetricsApi* | [**get_metrics**](docs/MetricsApi.md#get_metrics) | **GET** /subscriptions/{subscriptionId}/metrics | 
-*OmnicoreClient::RegistryApi* | [**create_registry**](docs/RegistryApi.md#create_registry) | **POST** /subscriptions/{subscriptionId}/registries | 
-*OmnicoreClient::RegistryApi* | [**delete_registry**](docs/RegistryApi.md#delete_registry) | **DELETE** /subscriptions/{subscriptionId}/registries/{registryId} | 
-*OmnicoreClient::RegistryApi* | [**get_registries**](docs/RegistryApi.md#get_registries) | **GET** /subscriptions/{subscriptionId}/registries | 
-*OmnicoreClient::RegistryApi* | [**get_registry**](docs/RegistryApi.md#get_registry) | **GET** /subscriptions/{subscriptionId}/registries/{registryId} | 
-*OmnicoreClient::RegistryApi* | [**send_broadcast_to_devices**](docs/RegistryApi.md#send_broadcast_to_devices) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/sendBroadcastToDevice | 
-*OmnicoreClient::RegistryApi* | [**update_registry**](docs/RegistryApi.md#update_registry) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId} | 
-*OmnicoreClient::SinkApi* | [**create_sink**](docs/SinkApi.md#create_sink) | **POST** /subscriptions/{subscriptionId}/sinks | 
-*OmnicoreClient::SinkApi* | [**delete_sink**](docs/SinkApi.md#delete_sink) | **DELETE** /subscriptions/{subscriptionId}/sinks/{sinkId} | 
-*OmnicoreClient::SinkApi* | [**get_a_sink**](docs/SinkApi.md#get_a_sink) | **GET** /subscriptions/{subscriptionId}/sinks/{sinkId} | 
-*OmnicoreClient::SinkApi* | [**get_sinks**](docs/SinkApi.md#get_sinks) | **GET** /subscriptions/{subscriptionId}/sinks | Get All Sinks
+*OmniCoreClient::DeviceApi* | [**bind_device**](docs/DeviceApi.md#bind_device) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/bindDeviceToGateway | 
+*OmniCoreClient::DeviceApi* | [**bind_devices**](docs/DeviceApi.md#bind_devices) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/bindDevicesToGateway | 
+*OmniCoreClient::DeviceApi* | [**block_device_communcation**](docs/DeviceApi.md#block_device_communcation) | **PUT** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/communication | 
+*OmniCoreClient::DeviceApi* | [**create_device**](docs/DeviceApi.md#create_device) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/devices | 
+*OmniCoreClient::DeviceApi* | [**delete_device**](docs/DeviceApi.md#delete_device) | **DELETE** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
+*OmniCoreClient::DeviceApi* | [**get_config**](docs/DeviceApi.md#get_config) | **GET** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/configVersions | 
+*OmniCoreClient::DeviceApi* | [**get_device**](docs/DeviceApi.md#get_device) | **GET** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
+*OmniCoreClient::DeviceApi* | [**get_devices**](docs/DeviceApi.md#get_devices) | **GET** /subscriptions/{subscriptionId}/registries/{registryId}/devices | 
+*OmniCoreClient::DeviceApi* | [**get_states**](docs/DeviceApi.md#get_states) | **GET** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states | 
+*OmniCoreClient::DeviceApi* | [**send_command_to_device**](docs/DeviceApi.md#send_command_to_device) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice | 
+*OmniCoreClient::DeviceApi* | [**un_bind_device**](docs/DeviceApi.md#un_bind_device) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway | 
+*OmniCoreClient::DeviceApi* | [**un_bind_devices**](docs/DeviceApi.md#un_bind_devices) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway | 
+*OmniCoreClient::DeviceApi* | [**update_configuration_to_device**](docs/DeviceApi.md#update_configuration_to_device) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice | 
+*OmniCoreClient::DeviceApi* | [**update_custom_onboard_request**](docs/DeviceApi.md#update_custom_onboard_request) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateCustomOnboardRequest | 
+*OmniCoreClient::DeviceApi* | [**update_device**](docs/DeviceApi.md#update_device) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
+*OmniCoreClient::MetricsApi* | [**get_metrics**](docs/MetricsApi.md#get_metrics) | **GET** /subscriptions/{subscriptionId}/metrics | 
+*OmniCoreClient::RegistryApi* | [**create_registry**](docs/RegistryApi.md#create_registry) | **POST** /subscriptions/{subscriptionId}/registries | 
+*OmniCoreClient::RegistryApi* | [**delete_registry**](docs/RegistryApi.md#delete_registry) | **DELETE** /subscriptions/{subscriptionId}/registries/{registryId} | 
+*OmniCoreClient::RegistryApi* | [**get_registries**](docs/RegistryApi.md#get_registries) | **GET** /subscriptions/{subscriptionId}/registries | 
+*OmniCoreClient::RegistryApi* | [**get_registry**](docs/RegistryApi.md#get_registry) | **GET** /subscriptions/{subscriptionId}/registries/{registryId} | 
+*OmniCoreClient::RegistryApi* | [**send_broadcast_to_devices**](docs/RegistryApi.md#send_broadcast_to_devices) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/sendBroadcastToDevice | 
+*OmniCoreClient::RegistryApi* | [**update_registry**](docs/RegistryApi.md#update_registry) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId} | 
+*OmniCoreClient::SinkApi* | [**create_sink**](docs/SinkApi.md#create_sink) | **POST** /subscriptions/{subscriptionId}/sinks | 
+*OmniCoreClient::SinkApi* | [**delete_sink**](docs/SinkApi.md#delete_sink) | **DELETE** /subscriptions/{subscriptionId}/sinks/{sinkId} | 
+*OmniCoreClient::SinkApi* | [**get_a_sink**](docs/SinkApi.md#get_a_sink) | **GET** /subscriptions/{subscriptionId}/sinks/{sinkId} | 
+*OmniCoreClient::SinkApi* | [**get_sinks**](docs/SinkApi.md#get_sinks) | **GET** /subscriptions/{subscriptionId}/sinks | Get All Sinks
 
 
 ## Documentation for Models
 
- - [OmnicoreClient::BindRequest](docs/BindRequest.md)
- - [OmnicoreClient::BindRequestIdsGateway](docs/BindRequestIdsGateway.md)
- - [OmnicoreClient::BlockCommunicationBody](docs/BlockCommunicationBody.md)
- - [OmnicoreClient::Config](docs/Config.md)
- - [OmnicoreClient::CustomOnboard](docs/CustomOnboard.md)
- - [OmnicoreClient::Device](docs/Device.md)
- - [OmnicoreClient::DeviceCommand](docs/DeviceCommand.md)
- - [OmnicoreClient::DeviceConfig](docs/DeviceConfig.md)
- - [OmnicoreClient::DeviceConfiguration](docs/DeviceConfiguration.md)
- - [OmnicoreClient::DeviceCredential](docs/DeviceCredential.md)
- - [OmnicoreClient::DeviceRegistry](docs/DeviceRegistry.md)
- - [OmnicoreClient::DeviceState](docs/DeviceState.md)
- - [OmnicoreClient::ErrorFrame](docs/ErrorFrame.md)
- - [OmnicoreClient::ErrorStatus](docs/ErrorStatus.md)
- - [OmnicoreClient::EventNotificationConfig](docs/EventNotificationConfig.md)
- - [OmnicoreClient::GatewayConfig](docs/GatewayConfig.md)
- - [OmnicoreClient::GenericErrorResponse](docs/GenericErrorResponse.md)
- - [OmnicoreClient::HttpConfig](docs/HttpConfig.md)
- - [OmnicoreClient::Info](docs/Info.md)
- - [OmnicoreClient::ListDeviceConfigVersionsResponse](docs/ListDeviceConfigVersionsResponse.md)
- - [OmnicoreClient::ListDeviceRegistries](docs/ListDeviceRegistries.md)
- - [OmnicoreClient::ListDeviceStatesResponse](docs/ListDeviceStatesResponse.md)
- - [OmnicoreClient::ListDevicesResponse](docs/ListDevicesResponse.md)
- - [OmnicoreClient::ListSinks](docs/ListSinks.md)
- - [OmnicoreClient::LogLevel](docs/LogLevel.md)
- - [OmnicoreClient::Metrics](docs/Metrics.md)
- - [OmnicoreClient::MetricsDetails](docs/MetricsDetails.md)
- - [OmnicoreClient::MqttConfig](docs/MqttConfig.md)
- - [OmnicoreClient::NotificationConfig](docs/NotificationConfig.md)
- - [OmnicoreClient::Policy](docs/Policy.md)
- - [OmnicoreClient::PublicKeyCertificate](docs/PublicKeyCertificate.md)
- - [OmnicoreClient::PublicKeyCredential](docs/PublicKeyCredential.md)
- - [OmnicoreClient::RegistryCredential](docs/RegistryCredential.md)
- - [OmnicoreClient::Sink](docs/Sink.md)
- - [OmnicoreClient::X509CertificateDetails](docs/X509CertificateDetails.md)
+ - [OmniCoreClient::BindRequest](docs/BindRequest.md)
+ - [OmniCoreClient::BindRequestIdsGateway](docs/BindRequestIdsGateway.md)
+ - [OmniCoreClient::BlockCommunicationBody](docs/BlockCommunicationBody.md)
+ - [OmniCoreClient::Config](docs/Config.md)
+ - [OmniCoreClient::CustomOnboard](docs/CustomOnboard.md)
+ - [OmniCoreClient::Device](docs/Device.md)
+ - [OmniCoreClient::DeviceCommand](docs/DeviceCommand.md)
+ - [OmniCoreClient::DeviceConfig](docs/DeviceConfig.md)
+ - [OmniCoreClient::DeviceConfiguration](docs/DeviceConfiguration.md)
+ - [OmniCoreClient::DeviceCredential](docs/DeviceCredential.md)
+ - [OmniCoreClient::DeviceRegistry](docs/DeviceRegistry.md)
+ - [OmniCoreClient::DeviceState](docs/DeviceState.md)
+ - [OmniCoreClient::ErrorFrame](docs/ErrorFrame.md)
+ - [OmniCoreClient::ErrorStatus](docs/ErrorStatus.md)
+ - [OmniCoreClient::EventNotificationConfig](docs/EventNotificationConfig.md)
+ - [OmniCoreClient::GatewayConfig](docs/GatewayConfig.md)
+ - [OmniCoreClient::GenericErrorResponse](docs/GenericErrorResponse.md)
+ - [OmniCoreClient::HttpConfig](docs/HttpConfig.md)
+ - [OmniCoreClient::Info](docs/Info.md)
+ - [OmniCoreClient::ListDeviceConfigVersionsResponse](docs/ListDeviceConfigVersionsResponse.md)
+ - [OmniCoreClient::ListDeviceRegistries](docs/ListDeviceRegistries.md)
+ - [OmniCoreClient::ListDeviceStatesResponse](docs/ListDeviceStatesResponse.md)
+ - [OmniCoreClient::ListDevicesResponse](docs/ListDevicesResponse.md)
+ - [OmniCoreClient::ListSinks](docs/ListSinks.md)
+ - [OmniCoreClient::LogLevel](docs/LogLevel.md)
+ - [OmniCoreClient::Metrics](docs/Metrics.md)
+ - [OmniCoreClient::MetricsDetails](docs/MetricsDetails.md)
+ - [OmniCoreClient::MqttConfig](docs/MqttConfig.md)
+ - [OmniCoreClient::NotificationConfig](docs/NotificationConfig.md)
+ - [OmniCoreClient::Policy](docs/Policy.md)
+ - [OmniCoreClient::PublicKeyCertificate](docs/PublicKeyCertificate.md)
+ - [OmniCoreClient::PublicKeyCredential](docs/PublicKeyCredential.md)
+ - [OmniCoreClient::RegistryCredential](docs/RegistryCredential.md)
+ - [OmniCoreClient::Sink](docs/Sink.md)
+ - [OmniCoreClient::X509CertificateDetails](docs/X509CertificateDetails.md)
 
 
 ## Documentation for Authorization

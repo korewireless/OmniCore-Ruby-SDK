@@ -1,4 +1,4 @@
-# OmnicoreClient::DeviceCredential
+# OmniCoreClient::DeviceCredential
 
 ## Properties
 
@@ -13,7 +13,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::DeviceCredential.new(
+instance = OmniCoreClient::DeviceCredential.new(
   expiration_time: null,
   id: null,
   public_key: null

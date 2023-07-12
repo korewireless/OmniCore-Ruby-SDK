@@ -10,7 +10,7 @@ OpenAPI Generator version: 6.4.0-SNAPSHOT
 
 =end
 
-module OmnicoreClient
+module OmniCoreClient
   class Configuration
     # Defines url scheme
     attr_accessor :scheme

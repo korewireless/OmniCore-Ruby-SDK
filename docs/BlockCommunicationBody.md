@@ -1,4 +1,4 @@
-# OmnicoreClient::BlockCommunicationBody
+# OmniCoreClient::BlockCommunicationBody
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::BlockCommunicationBody.new(
+instance = OmniCoreClient::BlockCommunicationBody.new(
   isblocked: null
 )
 ```

@@ -1,4 +1,4 @@
-# OmnicoreClient::Metrics
+# OmniCoreClient::Metrics
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::Metrics.new(
+instance = OmniCoreClient::Metrics.new(
   details: null
 )
 ```

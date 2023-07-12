@@ -1,4 +1,4 @@
-# OmnicoreClient::X509CertificateDetails
+# OmniCoreClient::X509CertificateDetails
 
 ## Properties
 
@@ -16,7 +16,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::X509CertificateDetails.new(
+instance = OmniCoreClient::X509CertificateDetails.new(
   expiry_time: null,
   issuer: null,
   public_key_type: null,

@@ -1,4 +1,4 @@
-# OmnicoreClient::Sink
+# OmniCoreClient::Sink
 
 ## Properties
 
@@ -17,7 +17,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::Sink.new(
+instance = OmniCoreClient::Sink.new(
   id: null,
   subscription: null,
   sink: null,

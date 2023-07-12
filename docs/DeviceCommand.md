@@ -1,4 +1,4 @@
-# OmnicoreClient::DeviceCommand
+# OmniCoreClient::DeviceCommand
 
 ## Properties
 
@@ -12,7 +12,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::DeviceCommand.new(
+instance = OmniCoreClient::DeviceCommand.new(
   binary_data: null,
   subfolder: null
 )

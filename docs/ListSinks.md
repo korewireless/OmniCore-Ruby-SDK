@@ -1,4 +1,4 @@
-# OmnicoreClient::ListSinks
+# OmniCoreClient::ListSinks
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::ListSinks.new(
+instance = OmniCoreClient::ListSinks.new(
   sinks: null
 )
 ```

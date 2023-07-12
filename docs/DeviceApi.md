@@ -1,4 +1,4 @@
-# OmnicoreClient::DeviceApi
+# OmniCoreClient::DeviceApi
 
 All URIs are relative to *https://api.korewireless.com/omnicore*
 
@@ -35,7 +35,7 @@ Bind  a device to a gateway under a registry
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -45,16 +45,16 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::DeviceApi.new
+api_instance = OmniCoreClient::DeviceApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
-bind = OmnicoreClient::BindRequest.new({device_id: 'device_id_example', gateway_id: 'gateway_id_example'}) # BindRequest | application/json
+bind = OmniCoreClient::BindRequest.new({device_id: 'device_id_example', gateway_id: 'gateway_id_example'}) # BindRequest | application/json
 
 begin
   
   result = api_instance.bind_device(subscription_id, registry_id, bind)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->bind_device: #{e}"
 end
 ```
@@ -72,7 +72,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Info>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->bind_device_with_http_info: #{e}"
 end
 ```
@@ -113,7 +113,7 @@ Bind devices to a gateway under a registry
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -123,16 +123,16 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::DeviceApi.new
+api_instance = OmniCoreClient::DeviceApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
-bind = OmnicoreClient::BindRequestIdsGateway.new({device_ids: ['device_ids_example'], gateway_id: 'gateway_id_example'}) # BindRequestIdsGateway | application/json
+bind = OmniCoreClient::BindRequestIdsGateway.new({device_ids: ['device_ids_example'], gateway_id: 'gateway_id_example'}) # BindRequestIdsGateway | application/json
 
 begin
   
   result = api_instance.bind_devices(subscription_id, registry_id, bind)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->bind_devices: #{e}"
 end
 ```
@@ -150,7 +150,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Info>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->bind_devices_with_http_info: #{e}"
 end
 ```
@@ -191,7 +191,7 @@ Blocks All Communication From A Device
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -201,17 +201,17 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::DeviceApi.new
+api_instance = OmniCoreClient::DeviceApi.new
 subscriptionid = 'subscriptionid_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
 device_id = 'device_id_example' # String | Device ID
-block = OmnicoreClient::BlockCommunicationBody.new # BlockCommunicationBody | application/json
+block = OmniCoreClient::BlockCommunicationBody.new # BlockCommunicationBody | application/json
 
 begin
   
   result = api_instance.block_device_communcation(subscriptionid, registry_id, device_id, block)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->block_device_communcation: #{e}"
 end
 ```
@@ -229,7 +229,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->block_device_communcation_with_http_info: #{e}"
 end
 ```
@@ -271,7 +271,7 @@ Create a device under a registry
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -281,16 +281,16 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::DeviceApi.new
+api_instance = OmniCoreClient::DeviceApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
-device = OmnicoreClient::Device.new({id: 'id_example'}) # Device | application/json
+device = OmniCoreClient::Device.new({id: 'id_example'}) # Device | application/json
 
 begin
   
   result = api_instance.create_device(subscription_id, registry_id, device)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->create_device: #{e}"
 end
 ```
@@ -308,7 +308,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Device>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->create_device_with_http_info: #{e}"
 end
 ```
@@ -349,7 +349,7 @@ Delete a device under a registry
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -359,7 +359,7 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::DeviceApi.new
+api_instance = OmniCoreClient::DeviceApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
 device_id = 'device_id_example' # String | Device ID
@@ -368,7 +368,7 @@ begin
   
   result = api_instance.delete_device(subscription_id, registry_id, device_id)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->delete_device: #{e}"
 end
 ```
@@ -386,7 +386,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->delete_device_with_http_info: #{e}"
 end
 ```
@@ -427,7 +427,7 @@ Get Configs Of Devices
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -437,7 +437,7 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::DeviceApi.new
+api_instance = OmniCoreClient::DeviceApi.new
 subscriptionid = 'subscriptionid_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
 device_id = 'device_id_example' # String | Device ID
@@ -449,7 +449,7 @@ begin
   
   result = api_instance.get_config(subscriptionid, registry_id, device_id, opts)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->get_config: #{e}"
 end
 ```
@@ -467,7 +467,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListDeviceConfigVersionsResponse>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->get_config_with_http_info: #{e}"
 end
 ```
@@ -509,7 +509,7 @@ Get a device under a registry
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -519,7 +519,7 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::DeviceApi.new
+api_instance = OmniCoreClient::DeviceApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
 device_id = 'device_id_example' # String | Device ID
@@ -528,7 +528,7 @@ begin
   
   result = api_instance.get_device(subscription_id, registry_id, device_id)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->get_device: #{e}"
 end
 ```
@@ -546,7 +546,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Device>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->get_device_with_http_info: #{e}"
 end
 ```
@@ -587,7 +587,7 @@ Get all devices under a registry
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -597,7 +597,7 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::DeviceApi.new
+api_instance = OmniCoreClient::DeviceApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
 opts = {
@@ -615,7 +615,7 @@ begin
   
   result = api_instance.get_devices(subscription_id, registry_id, opts)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->get_devices: #{e}"
 end
 ```
@@ -633,7 +633,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListDevicesResponse>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->get_devices_with_http_info: #{e}"
 end
 ```
@@ -681,7 +681,7 @@ Get States Of Devices
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -691,7 +691,7 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::DeviceApi.new
+api_instance = OmniCoreClient::DeviceApi.new
 subscriptionid = 'subscriptionid_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
 device_id = 'device_id_example' # String | Device ID
@@ -703,7 +703,7 @@ begin
   
   result = api_instance.get_states(subscriptionid, registry_id, device_id, opts)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->get_states: #{e}"
 end
 ```
@@ -721,7 +721,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListDeviceStatesResponse>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->get_states_with_http_info: #{e}"
 end
 ```
@@ -763,7 +763,7 @@ Send A Command To A Device
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -773,17 +773,17 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::DeviceApi.new
+api_instance = OmniCoreClient::DeviceApi.new
 subscriptionid = 'subscriptionid_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
 device_id = 'device_id_example' # String | Device ID
-command = OmnicoreClient::DeviceCommand.new({binary_data: 'binary_data_example'}) # DeviceCommand | application/json
+command = OmniCoreClient::DeviceCommand.new({binary_data: 'binary_data_example'}) # DeviceCommand | application/json
 
 begin
   
   result = api_instance.send_command_to_device(subscriptionid, registry_id, device_id, command)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->send_command_to_device: #{e}"
 end
 ```
@@ -801,7 +801,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->send_command_to_device_with_http_info: #{e}"
 end
 ```
@@ -843,7 +843,7 @@ UnBind  a device from a gateway under a registry
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -853,16 +853,16 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::DeviceApi.new
+api_instance = OmniCoreClient::DeviceApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
-unbind = OmnicoreClient::BindRequest.new({device_id: 'device_id_example', gateway_id: 'gateway_id_example'}) # BindRequest | application/json
+unbind = OmniCoreClient::BindRequest.new({device_id: 'device_id_example', gateway_id: 'gateway_id_example'}) # BindRequest | application/json
 
 begin
   
   result = api_instance.un_bind_device(subscription_id, registry_id, unbind)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->un_bind_device: #{e}"
 end
 ```
@@ -880,7 +880,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Info>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->un_bind_device_with_http_info: #{e}"
 end
 ```
@@ -921,7 +921,7 @@ UnBind devices from a gateway under a registry
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -931,16 +931,16 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::DeviceApi.new
+api_instance = OmniCoreClient::DeviceApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
-unbind = OmnicoreClient::BindRequestIdsGateway.new({device_ids: ['device_ids_example'], gateway_id: 'gateway_id_example'}) # BindRequestIdsGateway | application/json
+unbind = OmniCoreClient::BindRequestIdsGateway.new({device_ids: ['device_ids_example'], gateway_id: 'gateway_id_example'}) # BindRequestIdsGateway | application/json
 
 begin
   
   result = api_instance.un_bind_devices(subscription_id, registry_id, unbind)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->un_bind_devices: #{e}"
 end
 ```
@@ -958,7 +958,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Info>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->un_bind_devices_with_http_info: #{e}"
 end
 ```
@@ -999,7 +999,7 @@ Update A Configuration Of A Device
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -1009,17 +1009,17 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::DeviceApi.new
+api_instance = OmniCoreClient::DeviceApi.new
 subscriptionid = 'subscriptionid_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
 device_id = 'device_id_example' # String | Device ID
-configuration = OmnicoreClient::DeviceConfiguration.new({binary_data: 'binary_data_example'}) # DeviceConfiguration | application/json
+configuration = OmniCoreClient::DeviceConfiguration.new({binary_data: 'binary_data_example'}) # DeviceConfiguration | application/json
 
 begin
   
   result = api_instance.update_configuration_to_device(subscriptionid, registry_id, device_id, configuration)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->update_configuration_to_device: #{e}"
 end
 ```
@@ -1037,7 +1037,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DeviceConfig>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->update_configuration_to_device_with_http_info: #{e}"
 end
 ```
@@ -1079,7 +1079,7 @@ Approve/Reject a Custom Onboard Request
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -1089,17 +1089,17 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::DeviceApi.new
+api_instance = OmniCoreClient::DeviceApi.new
 subscriptionid = 'subscriptionid_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
 device_id = 'device_id_example' # String | Device ID
-custom_onboard = OmnicoreClient::CustomOnboard.new({id: 'id_example'}) # CustomOnboard | application/json
+custom_onboard = OmniCoreClient::CustomOnboard.new({id: 'id_example'}) # CustomOnboard | application/json
 
 begin
   
   result = api_instance.update_custom_onboard_request(subscriptionid, registry_id, device_id, custom_onboard)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->update_custom_onboard_request: #{e}"
 end
 ```
@@ -1117,7 +1117,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Info>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->update_custom_onboard_request_with_http_info: #{e}"
 end
 ```
@@ -1159,7 +1159,7 @@ Modify device under a registry
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -1169,18 +1169,18 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::DeviceApi.new
+api_instance = OmniCoreClient::DeviceApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
 device_id = 'device_id_example' # String | Device ID
 update_mask = 'logLevel' # String | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked,policy and metadata
-device = OmnicoreClient::Device.new({id: 'id_example'}) # Device | application/json
+device = OmniCoreClient::Device.new({id: 'id_example'}) # Device | application/json
 
 begin
   
   result = api_instance.update_device(subscription_id, registry_id, device_id, update_mask, device)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->update_device: #{e}"
 end
 ```
@@ -1198,7 +1198,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Device>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling DeviceApi->update_device_with_http_info: #{e}"
 end
 ```

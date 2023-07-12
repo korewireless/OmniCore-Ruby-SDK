@@ -1,4 +1,4 @@
-# OmnicoreClient::HttpConfig
+# OmniCoreClient::HttpConfig
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'omnicore_client'
 
-instance = OmnicoreClient::HttpConfig.new(
+instance = OmniCoreClient::HttpConfig.new(
   http_enabled_state: null
 )
 ```

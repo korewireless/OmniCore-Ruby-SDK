@@ -1,4 +1,4 @@
-# OmnicoreClient::RegistryApi
+# OmniCoreClient::RegistryApi
 
 All URIs are relative to *https://api.korewireless.com/omnicore*
 
@@ -26,7 +26,7 @@ Create a registry
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -36,17 +36,17 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::RegistryApi.new
+api_instance = OmniCoreClient::RegistryApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 opts = {
-  registry: OmnicoreClient::DeviceRegistry.new({id: 'id_example'}) # DeviceRegistry | application/json
+  registry: OmniCoreClient::DeviceRegistry.new({id: 'id_example'}) # DeviceRegistry | application/json
 }
 
 begin
   
   result = api_instance.create_registry(subscription_id, opts)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling RegistryApi->create_registry: #{e}"
 end
 ```
@@ -64,7 +64,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DeviceRegistry>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling RegistryApi->create_registry_with_http_info: #{e}"
 end
 ```
@@ -104,7 +104,7 @@ Delete a registry
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -114,7 +114,7 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::RegistryApi.new
+api_instance = OmniCoreClient::RegistryApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
 
@@ -122,7 +122,7 @@ begin
   
   result = api_instance.delete_registry(subscription_id, registry_id)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling RegistryApi->delete_registry: #{e}"
 end
 ```
@@ -140,7 +140,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Info>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling RegistryApi->delete_registry_with_http_info: #{e}"
 end
 ```
@@ -180,7 +180,7 @@ Get all registries under a subscription
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -190,7 +190,7 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::RegistryApi.new
+api_instance = OmniCoreClient::RegistryApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 opts = {
   page_number: 56, # Integer | Page Number
@@ -202,7 +202,7 @@ begin
   
   result = api_instance.get_registries(subscription_id, opts)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling RegistryApi->get_registries: #{e}"
 end
 ```
@@ -220,7 +220,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListDeviceRegistries>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling RegistryApi->get_registries_with_http_info: #{e}"
 end
 ```
@@ -262,7 +262,7 @@ Get a registry
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -272,7 +272,7 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::RegistryApi.new
+api_instance = OmniCoreClient::RegistryApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
 
@@ -280,7 +280,7 @@ begin
   
   result = api_instance.get_registry(subscription_id, registry_id)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling RegistryApi->get_registry: #{e}"
 end
 ```
@@ -298,7 +298,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DeviceRegistry>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling RegistryApi->get_registry_with_http_info: #{e}"
 end
 ```
@@ -338,7 +338,7 @@ Send  Broadcast To Devices
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -348,16 +348,16 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::RegistryApi.new
+api_instance = OmniCoreClient::RegistryApi.new
 subscriptionid = 'subscriptionid_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
-broadcast = OmnicoreClient::DeviceCommand.new({binary_data: 'binary_data_example'}) # DeviceCommand | application/json
+broadcast = OmniCoreClient::DeviceCommand.new({binary_data: 'binary_data_example'}) # DeviceCommand | application/json
 
 begin
   
   result = api_instance.send_broadcast_to_devices(subscriptionid, registry_id, broadcast)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling RegistryApi->send_broadcast_to_devices: #{e}"
 end
 ```
@@ -375,7 +375,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling RegistryApi->send_broadcast_to_devices_with_http_info: #{e}"
 end
 ```
@@ -416,7 +416,7 @@ Update a registry
 require 'time'
 require 'omnicore_client'
 # setup authorization
-OmnicoreClient.configure do |config|
+OmniCoreClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['apiKey'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
@@ -426,19 +426,19 @@ OmnicoreClient.configure do |config|
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OmnicoreClient::RegistryApi.new
+api_instance = OmniCoreClient::RegistryApi.new
 subscription_id = 'subscription_id_example' # String | Subscription ID
 registry_id = 'registry_id_example' # String | Registry ID
 update_mask = 'eventNotificationConfigs' # String | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,customOnboardNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardEnabled
 opts = {
-  registry: OmnicoreClient::DeviceRegistry.new({id: 'id_example'}) # DeviceRegistry | application/json
+  registry: OmniCoreClient::DeviceRegistry.new({id: 'id_example'}) # DeviceRegistry | application/json
 }
 
 begin
   
   result = api_instance.update_registry(subscription_id, registry_id, update_mask, opts)
   p result
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling RegistryApi->update_registry: #{e}"
 end
 ```
@@ -456,7 +456,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DeviceRegistry>
-rescue OmnicoreClient::ApiError => e
+rescue OmniCoreClient::ApiError => e
   puts "Error when calling RegistryApi->update_registry_with_http_info: #{e}"
 end
 ```
