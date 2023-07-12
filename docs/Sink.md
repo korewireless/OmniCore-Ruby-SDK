@@ -1,0 +1,30 @@
+# OpenapiClient::Sink
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** |  | [optional][readonly] |
+| **subscription** | **String** |  | [optional][readonly] |
+| **sink** | **String** |  | [optional] |
+| **config** | [**Config**](Config.md) |  | [optional] |
+| **status** | **Boolean** |  | [optional][readonly] |
+| **createdon** | **String** |  | [optional][readonly] |
+| **updatedon** | **String** |  | [optional][readonly] |
+
+## Example
+
+```ruby
+require 'openapi_client'
+
+instance = OpenapiClient::Sink.new(
+  id: null,
+  subscription: null,
+  sink: null,
+  config: null,
+  status: null,
+  createdon: null,
+  updatedon: null
+)
+```
+
