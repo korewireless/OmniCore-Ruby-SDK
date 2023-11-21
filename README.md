@@ -5,7 +5,7 @@ OmniCoreClient - the Ruby gem for the OmniCore Model and State Management API
 This is an OmniCore Model and State Management server.
 
 
-- API version: 1.8.3
+- API version: 1.8.4
 - Package version: {_PACKAGE_VERSION}
 - Build package: org.openapitools.codegen.languages.RubyClientCodegen
 For more information, please visit [http://www.korewireless.com](http://www.korewireless.com)
@@ -116,14 +116,16 @@ Class | Method | HTTP request | Description
 *OmniCoreClient::SinkApi* | [**get_a_sink**](docs/SinkApi.md#get_a_sink) | **GET** /omnicore/subscriptions/{subscriptionId}/sinks/{sinkId} | 
 *OmniCoreClient::SinkApi* | [**get_sinks**](docs/SinkApi.md#get_sinks) | **GET** /omnicore/subscriptions/{subscriptionId}/sinks | Get All Sinks
 *OmniCoreClient::VaultApi* | [**create_vault_configuration**](docs/VaultApi.md#create_vault_configuration) | **POST** /vault/subscriptions/{subscriptionid}/configurations | 
+*OmniCoreClient::VaultApi* | [**create_vault_key**](docs/VaultApi.md#create_vault_key) | **POST** /vault/subscriptions/{subscriptionid}/encryptionkeys | 
 *OmniCoreClient::VaultApi* | [**delete_configuration**](docs/VaultApi.md#delete_configuration) | **DELETE** /vault/subscriptions/{subscriptionid}/configurations/{configid} | 
-*OmniCoreClient::VaultApi* | [**enable_vault**](docs/VaultApi.md#enable_vault) | **POST** /vault/subscriptions/{subscriptionid}/enable-vault | 
+*OmniCoreClient::VaultApi* | [**delete_vault_key**](docs/VaultApi.md#delete_vault_key) | **DELETE** /vault/subscriptions/{subscriptionid}/encryptionkeys/{keyid} | 
 *OmniCoreClient::VaultApi* | [**get_exports**](docs/VaultApi.md#get_exports) | **GET** /vault/subscriptions/{subscriptionid}/exports | 
 *OmniCoreClient::VaultApi* | [**get_registry_data**](docs/VaultApi.md#get_registry_data) | **GET** /vault/subscriptions/{subscriptionid}/folders | 
 *OmniCoreClient::VaultApi* | [**get_replays**](docs/VaultApi.md#get_replays) | **GET** /vault/subscriptions/{subscriptionid}/replays | 
 *OmniCoreClient::VaultApi* | [**get_vault_audit**](docs/VaultApi.md#get_vault_audit) | **GET** /vault/subscriptions/{subscriptionid}/audit | 
 *OmniCoreClient::VaultApi* | [**get_vault_configurations**](docs/VaultApi.md#get_vault_configurations) | **GET** /vault/subscriptions/{subscriptionid}/configurations | 
 *OmniCoreClient::VaultApi* | [**get_vault_files**](docs/VaultApi.md#get_vault_files) | **GET** /vault/subscriptions/{subscriptionid}/registry/{registryid}/files | 
+*OmniCoreClient::VaultApi* | [**get_vault_keys**](docs/VaultApi.md#get_vault_keys) | **GET** /vault/subscriptions/{subscriptionid}/encryptionkeys | 
 *OmniCoreClient::VaultApi* | [**get_vault_metrics**](docs/VaultApi.md#get_vault_metrics) | **GET** /vault/subscriptions/{subscriptionid}/metrics | 
 *OmniCoreClient::VaultApi* | [**get_vault_status**](docs/VaultApi.md#get_vault_status) | **GET** /vault/subscriptions/{subscriptionid}/status | 
 *OmniCoreClient::VaultApi* | [**start_export**](docs/VaultApi.md#start_export) | **POST** /vault/subscriptions/{subscriptionid}/exports | 
@@ -140,8 +142,8 @@ Class | Method | HTTP request | Description
  - [OmniCoreClient::Config](docs/Config.md)
  - [OmniCoreClient::Configurations](docs/Configurations.md)
  - [OmniCoreClient::CreateConfiguration](docs/CreateConfiguration.md)
+ - [OmniCoreClient::CreateVaultKeyBody](docs/CreateVaultKeyBody.md)
  - [OmniCoreClient::CustomOnboard](docs/CustomOnboard.md)
- - [OmniCoreClient::Details](docs/Details.md)
  - [OmniCoreClient::Device](docs/Device.md)
  - [OmniCoreClient::DeviceCommand](docs/DeviceCommand.md)
  - [OmniCoreClient::DeviceConfig](docs/DeviceConfig.md)
@@ -149,7 +151,6 @@ Class | Method | HTTP request | Description
  - [OmniCoreClient::DeviceCredential](docs/DeviceCredential.md)
  - [OmniCoreClient::DeviceRegistry](docs/DeviceRegistry.md)
  - [OmniCoreClient::DeviceState](docs/DeviceState.md)
- - [OmniCoreClient::EnableVault](docs/EnableVault.md)
  - [OmniCoreClient::ErrorFrame](docs/ErrorFrame.md)
  - [OmniCoreClient::ErrorStatus](docs/ErrorStatus.md)
  - [OmniCoreClient::EventNotificationConfig](docs/EventNotificationConfig.md)
@@ -162,6 +163,7 @@ Class | Method | HTTP request | Description
  - [OmniCoreClient::GatewayConfig](docs/GatewayConfig.md)
  - [OmniCoreClient::GenericErrorResponse](docs/GenericErrorResponse.md)
  - [OmniCoreClient::GetExportsResponse](docs/GetExportsResponse.md)
+ - [OmniCoreClient::GetKeysResponse](docs/GetKeysResponse.md)
  - [OmniCoreClient::GetReplaysResponse](docs/GetReplaysResponse.md)
  - [OmniCoreClient::HttpConfig](docs/HttpConfig.md)
  - [OmniCoreClient::Info](docs/Info.md)
@@ -189,6 +191,7 @@ Class | Method | HTTP request | Description
  - [OmniCoreClient::Sink](docs/Sink.md)
  - [OmniCoreClient::StartExportBody](docs/StartExportBody.md)
  - [OmniCoreClient::VaultConfiguration](docs/VaultConfiguration.md)
+ - [OmniCoreClient::VaultEncryptionKey](docs/VaultEncryptionKey.md)
  - [OmniCoreClient::VaultStatus](docs/VaultStatus.md)
  - [OmniCoreClient::VaultStatusDetails](docs/VaultStatusDetails.md)
  - [OmniCoreClient::X509CertificateDetails](docs/X509CertificateDetails.md)

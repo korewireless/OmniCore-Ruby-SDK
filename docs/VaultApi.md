@@ -5,14 +5,16 @@ All URIs are relative to *https://api.korewireless.com*
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**create_vault_configuration**](VaultApi.md#create_vault_configuration) | **POST** /vault/subscriptions/{subscriptionid}/configurations |  |
+| [**create_vault_key**](VaultApi.md#create_vault_key) | **POST** /vault/subscriptions/{subscriptionid}/encryptionkeys |  |
 | [**delete_configuration**](VaultApi.md#delete_configuration) | **DELETE** /vault/subscriptions/{subscriptionid}/configurations/{configid} |  |
-| [**enable_vault**](VaultApi.md#enable_vault) | **POST** /vault/subscriptions/{subscriptionid}/enable-vault |  |
+| [**delete_vault_key**](VaultApi.md#delete_vault_key) | **DELETE** /vault/subscriptions/{subscriptionid}/encryptionkeys/{keyid} |  |
 | [**get_exports**](VaultApi.md#get_exports) | **GET** /vault/subscriptions/{subscriptionid}/exports |  |
 | [**get_registry_data**](VaultApi.md#get_registry_data) | **GET** /vault/subscriptions/{subscriptionid}/folders |  |
 | [**get_replays**](VaultApi.md#get_replays) | **GET** /vault/subscriptions/{subscriptionid}/replays |  |
 | [**get_vault_audit**](VaultApi.md#get_vault_audit) | **GET** /vault/subscriptions/{subscriptionid}/audit |  |
 | [**get_vault_configurations**](VaultApi.md#get_vault_configurations) | **GET** /vault/subscriptions/{subscriptionid}/configurations |  |
 | [**get_vault_files**](VaultApi.md#get_vault_files) | **GET** /vault/subscriptions/{subscriptionid}/registry/{registryid}/files |  |
+| [**get_vault_keys**](VaultApi.md#get_vault_keys) | **GET** /vault/subscriptions/{subscriptionid}/encryptionkeys |  |
 | [**get_vault_metrics**](VaultApi.md#get_vault_metrics) | **GET** /vault/subscriptions/{subscriptionid}/metrics |  |
 | [**get_vault_status**](VaultApi.md#get_vault_status) | **GET** /vault/subscriptions/{subscriptionid}/status |  |
 | [**start_export**](VaultApi.md#start_export) | **POST** /vault/subscriptions/{subscriptionid}/exports |  |
@@ -82,6 +84,84 @@ end
 | ---- | ---- | ----------- | ----- |
 | **subscriptionid** | **String** | Subscription ID |  |
 | **create_configuration** | [**CreateConfiguration**](CreateConfiguration.md) | application/json | [optional] |
+
+### Return type
+
+[**Frame**](Frame.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## create_vault_key
+
+> <Frame> create_vault_key(subscriptionid, opts)
+
+
+
+Create Vault Key
+
+### Examples
+
+```ruby
+require 'time'
+require 'omnicore_client'
+# setup authorization
+OmniCoreClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure Bearer authorization (JWT): bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = OmniCoreClient::VaultApi.new
+subscriptionid = 'subscriptionid_example' # String | Subscription ID
+opts = {
+  create_vault_key_body: OmniCoreClient::CreateVaultKeyBody.new # CreateVaultKeyBody | application/json
+}
+
+begin
+  
+  result = api_instance.create_vault_key(subscriptionid, opts)
+  p result
+rescue OmniCoreClient::ApiError => e
+  puts "Error when calling VaultApi->create_vault_key: #{e}"
+end
+```
+
+#### Using the create_vault_key_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Frame>, Integer, Hash)> create_vault_key_with_http_info(subscriptionid, opts)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.create_vault_key_with_http_info(subscriptionid, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Frame>
+rescue OmniCoreClient::ApiError => e
+  puts "Error when calling VaultApi->create_vault_key_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **subscriptionid** | **String** | Subscription ID |  |
+| **create_vault_key_body** | [**CreateVaultKeyBody**](CreateVaultKeyBody.md) | application/json | [optional] |
 
 ### Return type
 
@@ -173,13 +253,13 @@ end
 - **Accept**: application/json
 
 
-## enable_vault
+## delete_vault_key
 
-> <Details> enable_vault(subscriptionid, opts)
+> <Frame> delete_vault_key(subscriptionid, keyid)
 
 
 
-Enable/Disable vault for a subscription
+Delete Vault Key
 
 ### Examples
 
@@ -199,34 +279,32 @@ end
 
 api_instance = OmniCoreClient::VaultApi.new
 subscriptionid = 'subscriptionid_example' # String | Subscription ID
-opts = {
-  enable_vault: OmniCoreClient::EnableVault.new({type: 'GCS', action: 'enable'}) # EnableVault | application/json
-}
+keyid = 'keyid_example' # String | key id
 
 begin
   
-  result = api_instance.enable_vault(subscriptionid, opts)
+  result = api_instance.delete_vault_key(subscriptionid, keyid)
   p result
 rescue OmniCoreClient::ApiError => e
-  puts "Error when calling VaultApi->enable_vault: #{e}"
+  puts "Error when calling VaultApi->delete_vault_key: #{e}"
 end
 ```
 
-#### Using the enable_vault_with_http_info variant
+#### Using the delete_vault_key_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Details>, Integer, Hash)> enable_vault_with_http_info(subscriptionid, opts)
+> <Array(<Frame>, Integer, Hash)> delete_vault_key_with_http_info(subscriptionid, keyid)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.enable_vault_with_http_info(subscriptionid, opts)
+  data, status_code, headers = api_instance.delete_vault_key_with_http_info(subscriptionid, keyid)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Details>
+  p data # => <Frame>
 rescue OmniCoreClient::ApiError => e
-  puts "Error when calling VaultApi->enable_vault_with_http_info: #{e}"
+  puts "Error when calling VaultApi->delete_vault_key_with_http_info: #{e}"
 end
 ```
 
@@ -235,11 +313,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **subscriptionid** | **String** | Subscription ID |  |
-| **enable_vault** | [**EnableVault**](EnableVault.md) | application/json | [optional] |
+| **keyid** | **String** | key id |  |
 
 ### Return type
 
-[**Details**](Details.md)
+[**Frame**](Frame.md)
 
 ### Authorization
 
@@ -247,7 +325,7 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -696,6 +774,80 @@ end
 ### Return type
 
 [**FileDetails**](FileDetails.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_vault_keys
+
+> <GetKeysResponse> get_vault_keys(subscriptionid)
+
+
+
+Get Vault Keys
+
+### Examples
+
+```ruby
+require 'time'
+require 'omnicore_client'
+# setup authorization
+OmniCoreClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure Bearer authorization (JWT): bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = OmniCoreClient::VaultApi.new
+subscriptionid = 'subscriptionid_example' # String | Subscription ID
+
+begin
+  
+  result = api_instance.get_vault_keys(subscriptionid)
+  p result
+rescue OmniCoreClient::ApiError => e
+  puts "Error when calling VaultApi->get_vault_keys: #{e}"
+end
+```
+
+#### Using the get_vault_keys_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetKeysResponse>, Integer, Hash)> get_vault_keys_with_http_info(subscriptionid)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.get_vault_keys_with_http_info(subscriptionid)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetKeysResponse>
+rescue OmniCoreClient::ApiError => e
+  puts "Error when calling VaultApi->get_vault_keys_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **subscriptionid** | **String** | Subscription ID |  |
+
+### Return type
+
+[**GetKeysResponse**](GetKeysResponse.md)
 
 ### Authorization
 
