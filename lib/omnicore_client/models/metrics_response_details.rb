@@ -23,6 +23,10 @@ module OmniCoreClient
 
     attr_accessor :noofoperations
 
+    attr_accessor :no_of_replays
+
+    attr_accessor :no_of_exports
+
     attr_accessor :operations
 
     attr_accessor :details_for_time_period
@@ -34,6 +38,8 @@ module OmniCoreClient
         :'no_of_files' => :'noOfFiles',
         :'file_size' => :'fileSize',
         :'noofoperations' => :'noofoperations',
+        :'no_of_replays' => :'noOfReplays',
+        :'no_of_exports' => :'noOfExports',
         :'operations' => :'Operations',
         :'details_for_time_period' => :'detailsForTimePeriod'
       }
@@ -51,8 +57,10 @@ module OmniCoreClient
         :'no_of_files' => :'Integer',
         :'file_size' => :'Float',
         :'noofoperations' => :'Integer',
+        :'no_of_replays' => :'Float',
+        :'no_of_exports' => :'Float',
         :'operations' => :'Array<OperationMetrics>',
-        :'details_for_time_period' => :'Array<MetricsData>'
+        :'details_for_time_period' => :'MetricsData'
       }
     end
 
@@ -93,6 +101,14 @@ module OmniCoreClient
         self.noofoperations = attributes[:'noofoperations']
       end
 
+      if attributes.key?(:'no_of_replays')
+        self.no_of_replays = attributes[:'no_of_replays']
+      end
+
+      if attributes.key?(:'no_of_exports')
+        self.no_of_exports = attributes[:'no_of_exports']
+      end
+
       if attributes.key?(:'operations')
         if (value = attributes[:'operations']).is_a?(Array)
           self.operations = value
@@ -100,9 +116,7 @@ module OmniCoreClient
       end
 
       if attributes.key?(:'details_for_time_period')
-        if (value = attributes[:'details_for_time_period']).is_a?(Array)
-          self.details_for_time_period = value
-        end
+        self.details_for_time_period = attributes[:'details_for_time_period']
       end
     end
 
@@ -128,6 +142,8 @@ module OmniCoreClient
           no_of_files == o.no_of_files &&
           file_size == o.file_size &&
           noofoperations == o.noofoperations &&
+          no_of_replays == o.no_of_replays &&
+          no_of_exports == o.no_of_exports &&
           operations == o.operations &&
           details_for_time_period == o.details_for_time_period
     end
@@ -141,7 +157,7 @@ module OmniCoreClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [subscription_id, no_of_files, file_size, noofoperations, operations, details_for_time_period].hash
+      [subscription_id, no_of_files, file_size, noofoperations, no_of_replays, no_of_exports, operations, details_for_time_period].hash
     end
 
     # Builds the object from hash

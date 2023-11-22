@@ -8,8 +8,10 @@
 | **no_of_files** | **Integer** |  | [optional] |
 | **file_size** | **Float** |  | [optional] |
 | **noofoperations** | **Integer** |  | [optional] |
+| **no_of_replays** | **Float** |  | [optional] |
+| **no_of_exports** | **Float** |  | [optional] |
 | **operations** | [**Array&lt;OperationMetrics&gt;**](OperationMetrics.md) |  | [optional] |
-| **details_for_time_period** | [**Array&lt;MetricsData&gt;**](MetricsData.md) |  | [optional] |
+| **details_for_time_period** | [**MetricsData**](MetricsData.md) |  | [optional] |
 
 ## Example
 
@@ -21,6 +23,8 @@ instance = OmniCoreClient::MetricsResponseDetails.new(
   no_of_files: null,
   file_size: null,
   noofoperations: null,
+  no_of_replays: null,
+  no_of_exports: null,
   operations: null,
   details_for_time_period: null
 )
