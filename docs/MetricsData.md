@@ -5,8 +5,8 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **data** | [**Array&lt;MetricsLogs&gt;**](MetricsLogs.md) |  | [optional] |
-| **total_exports** | **Integer** |  | [optional] |
-| **total_replays** | **Integer** |  | [optional] |
+| **total_export_size** | **Float** |  | [optional] |
+| **total_replay_size** | **Float** |  | [optional] |
 
 ## Example
 
@@ -15,8 +15,8 @@ require 'omnicore_client'
 
 instance = OmniCoreClient::MetricsData.new(
   data: null,
-  total_exports: null,
-  total_replays: null
+  total_export_size: null,
+  total_replay_size: null
 )
 ```
 

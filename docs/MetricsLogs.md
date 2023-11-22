@@ -8,8 +8,8 @@
 | **file_size** | **Float** |  | [optional] |
 | **noofoperations** | **Integer** |  | [optional] |
 | **updatedon** | **String** |  | [optional] |
-| **no_of_replays** | **Integer** |  | [optional] |
-| **no_of_exports** | **Integer** |  | [optional] |
+| **replay_file_size** | **Float** |  | [optional] |
+| **export_file_size** | **Float** |  | [optional] |
 
 ## Example
 
@@ -21,8 +21,8 @@ instance = OmniCoreClient::MetricsLogs.new(
   file_size: null,
   noofoperations: null,
   updatedon: null,
-  no_of_replays: null,
-  no_of_exports: null
+  replay_file_size: null,
+  export_file_size: null
 )
 ```
 

@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **subscription** | **String** |  | [optional] |
 | **name** | **String** |  | [optional] |
-| **id** | **String** |  | [optional] |
+| **id** | **Integer** |  | [optional] |
 | **key** | **String** |  | [optional] |
 
 ## Example
