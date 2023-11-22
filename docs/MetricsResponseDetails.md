@@ -8,8 +8,8 @@
 | **no_of_files** | **Integer** |  | [optional] |
 | **file_size** | **Float** |  | [optional] |
 | **noofoperations** | **Integer** |  | [optional] |
-| **no_of_replays** | **Float** |  | [optional] |
-| **no_of_exports** | **Float** |  | [optional] |
+| **no_of_replays** | **Integer** |  | [optional] |
+| **no_of_exports** | **Integer** |  | [optional] |
 | **operations** | [**Array&lt;OperationMetrics&gt;**](OperationMetrics.md) |  | [optional] |
 | **details_for_time_period** | [**MetricsData**](MetricsData.md) |  | [optional] |
 

@@ -5,7 +5,7 @@ OmniCoreClient - the Ruby gem for the OmniCore Model and State Management API
 This is an OmniCore Model and State Management server.
 
 
-- API version: 1.8.4
+- API version: 1.8.5
 - Package version: {_PACKAGE_VERSION}
 - Build package: org.openapitools.codegen.languages.RubyClientCodegen
 For more information, please visit [http://www.korewireless.com](http://www.korewireless.com)
