@@ -8,6 +8,7 @@ All URIs are relative to *https://api.korewireless.com*
 | [**create_vault_key**](VaultApi.md#create_vault_key) | **POST** /vault/subscriptions/{subscriptionid}/encryptionkeys |  |
 | [**delete_configuration**](VaultApi.md#delete_configuration) | **DELETE** /vault/subscriptions/{subscriptionid}/configurations/{configid} |  |
 | [**delete_vault_key**](VaultApi.md#delete_vault_key) | **DELETE** /vault/subscriptions/{subscriptionid}/encryptionkeys/{keyid} |  |
+| [**enable_encryption**](VaultApi.md#enable_encryption) | **POST** /vault/subscriptions/{subscriptionid}/encryption |  |
 | [**get_exports**](VaultApi.md#get_exports) | **GET** /vault/subscriptions/{subscriptionid}/exports |  |
 | [**get_registry_data**](VaultApi.md#get_registry_data) | **GET** /vault/subscriptions/{subscriptionid}/folders |  |
 | [**get_replays**](VaultApi.md#get_replays) | **GET** /vault/subscriptions/{subscriptionid}/replays |  |
@@ -17,6 +18,7 @@ All URIs are relative to *https://api.korewireless.com*
 | [**get_vault_keys**](VaultApi.md#get_vault_keys) | **GET** /vault/subscriptions/{subscriptionid}/encryptionkeys |  |
 | [**get_vault_metrics**](VaultApi.md#get_vault_metrics) | **GET** /vault/subscriptions/{subscriptionid}/metrics |  |
 | [**get_vault_status**](VaultApi.md#get_vault_status) | **GET** /vault/subscriptions/{subscriptionid}/status |  |
+| [**set_retention**](VaultApi.md#set_retention) | **POST** /vault/subscriptions/{subscriptionid}/retention |  |
 | [**start_export**](VaultApi.md#start_export) | **POST** /vault/subscriptions/{subscriptionid}/exports |  |
 | [**start_replay**](VaultApi.md#start_replay) | **POST** /vault/subscriptions/{subscriptionid}/replays |  |
 
@@ -326,6 +328,84 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## enable_encryption
+
+> <Frame> enable_encryption(subscriptionid, opts)
+
+
+
+Enable Encryption
+
+### Examples
+
+```ruby
+require 'time'
+require 'omnicore_client'
+# setup authorization
+OmniCoreClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure Bearer authorization (JWT): bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = OmniCoreClient::VaultApi.new
+subscriptionid = 'subscriptionid_example' # String | Subscription ID
+opts = {
+  enable_encryption_body: OmniCoreClient::EnableEncryptionBody.new # EnableEncryptionBody | application/json
+}
+
+begin
+  
+  result = api_instance.enable_encryption(subscriptionid, opts)
+  p result
+rescue OmniCoreClient::ApiError => e
+  puts "Error when calling VaultApi->enable_encryption: #{e}"
+end
+```
+
+#### Using the enable_encryption_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Frame>, Integer, Hash)> enable_encryption_with_http_info(subscriptionid, opts)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.enable_encryption_with_http_info(subscriptionid, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Frame>
+rescue OmniCoreClient::ApiError => e
+  puts "Error when calling VaultApi->enable_encryption_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **subscriptionid** | **String** | Subscription ID |  |
+| **enable_encryption_body** | [**EnableEncryptionBody**](EnableEncryptionBody.md) | application/json | [optional] |
+
+### Return type
+
+[**Frame**](Frame.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -1010,6 +1090,84 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## set_retention
+
+> <Frame> set_retention(subscriptionid, opts)
+
+
+
+Set Retention Period
+
+### Examples
+
+```ruby
+require 'time'
+require 'omnicore_client'
+# setup authorization
+OmniCoreClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure Bearer authorization (JWT): bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = OmniCoreClient::VaultApi.new
+subscriptionid = 'subscriptionid_example' # String | Subscription ID
+opts = {
+  set_retention_body: OmniCoreClient::SetRetentionBody.new # SetRetentionBody | application/json
+}
+
+begin
+  
+  result = api_instance.set_retention(subscriptionid, opts)
+  p result
+rescue OmniCoreClient::ApiError => e
+  puts "Error when calling VaultApi->set_retention: #{e}"
+end
+```
+
+#### Using the set_retention_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Frame>, Integer, Hash)> set_retention_with_http_info(subscriptionid, opts)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.set_retention_with_http_info(subscriptionid, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Frame>
+rescue OmniCoreClient::ApiError => e
+  puts "Error when calling VaultApi->set_retention_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **subscriptionid** | **String** | Subscription ID |  |
+| **set_retention_body** | [**SetRetentionBody**](SetRetentionBody.md) | application/json | [optional] |
+
+### Return type
+
+[**Frame**](Frame.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

@@ -14,13 +14,19 @@ require 'date'
 require 'time'
 
 module OmniCoreClient
-  class GetReplaysResponse
-    attr_accessor :details
+  class EnableEncryptionBody
+    attr_accessor :action
+
+    attr_accessor :is_encrypted
+
+    attr_accessor :encryption_key_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'details' => :'details'
+        :'action' => :'action',
+        :'is_encrypted' => :'isEncrypted',
+        :'encryption_key_id' => :'encryptionKeyId'
       }
     end
 
@@ -32,7 +38,9 @@ module OmniCoreClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'details' => :'Array<Replay>'
+        :'action' => :'String',
+        :'is_encrypted' => :'Boolean',
+        :'encryption_key_id' => :'Integer'
       }
     end
 
@@ -46,21 +54,27 @@ module OmniCoreClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `OmniCoreClient::GetReplaysResponse` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `OmniCoreClient::EnableEncryptionBody` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `OmniCoreClient::GetReplaysResponse`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `OmniCoreClient::EnableEncryptionBody`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'details')
-        if (value = attributes[:'details']).is_a?(Array)
-          self.details = value
-        end
+      if attributes.key?(:'action')
+        self.action = attributes[:'action']
+      end
+
+      if attributes.key?(:'is_encrypted')
+        self.is_encrypted = attributes[:'is_encrypted']
+      end
+
+      if attributes.key?(:'encryption_key_id')
+        self.encryption_key_id = attributes[:'encryption_key_id']
       end
     end
 
@@ -82,7 +96,9 @@ module OmniCoreClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          details == o.details
+          action == o.action &&
+          is_encrypted == o.is_encrypted &&
+          encryption_key_id == o.encryption_key_id
     end
 
     # @see the `==` method
@@ -94,7 +110,7 @@ module OmniCoreClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [details].hash
+      [action, is_encrypted, encryption_key_id].hash
     end
 
     # Builds the object from hash

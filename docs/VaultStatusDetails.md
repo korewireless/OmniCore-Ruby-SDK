@@ -11,6 +11,9 @@
 | **updatedon** | **String** |  | [optional] |
 | **created_on** | **String** |  | [optional] |
 | **mqtt_id** | **String** |  | [optional] |
+| **retention_period** | **Integer** |  | [optional] |
+| **encryption_key_id** | **Integer** |  | [optional] |
+| **is_encrypted** | **Boolean** |  | [optional] |
 
 ## Example
 
@@ -24,7 +27,10 @@ instance = OmniCoreClient::VaultStatusDetails.new(
   is_created: null,
   updatedon: null,
   created_on: null,
-  mqtt_id: null
+  mqtt_id: null,
+  retention_period: null,
+  encryption_key_id: null,
+  is_encrypted: null
 )
 ```
 

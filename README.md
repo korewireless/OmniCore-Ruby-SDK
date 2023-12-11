@@ -5,7 +5,7 @@ OmniCoreClient - the Ruby gem for the OmniCore Model and State Management API
 This is an OmniCore Model and State Management server.
 
 
-- API version: 1.8.6
+- API version: 1.8.7
 - Package version: {_PACKAGE_VERSION}
 - Build package: org.openapitools.codegen.languages.RubyClientCodegen
 For more information, please visit [http://www.korewireless.com](http://www.korewireless.com)
@@ -119,6 +119,7 @@ Class | Method | HTTP request | Description
 *OmniCoreClient::VaultApi* | [**create_vault_key**](docs/VaultApi.md#create_vault_key) | **POST** /vault/subscriptions/{subscriptionid}/encryptionkeys | 
 *OmniCoreClient::VaultApi* | [**delete_configuration**](docs/VaultApi.md#delete_configuration) | **DELETE** /vault/subscriptions/{subscriptionid}/configurations/{configid} | 
 *OmniCoreClient::VaultApi* | [**delete_vault_key**](docs/VaultApi.md#delete_vault_key) | **DELETE** /vault/subscriptions/{subscriptionid}/encryptionkeys/{keyid} | 
+*OmniCoreClient::VaultApi* | [**enable_encryption**](docs/VaultApi.md#enable_encryption) | **POST** /vault/subscriptions/{subscriptionid}/encryption | 
 *OmniCoreClient::VaultApi* | [**get_exports**](docs/VaultApi.md#get_exports) | **GET** /vault/subscriptions/{subscriptionid}/exports | 
 *OmniCoreClient::VaultApi* | [**get_registry_data**](docs/VaultApi.md#get_registry_data) | **GET** /vault/subscriptions/{subscriptionid}/folders | 
 *OmniCoreClient::VaultApi* | [**get_replays**](docs/VaultApi.md#get_replays) | **GET** /vault/subscriptions/{subscriptionid}/replays | 
@@ -128,6 +129,7 @@ Class | Method | HTTP request | Description
 *OmniCoreClient::VaultApi* | [**get_vault_keys**](docs/VaultApi.md#get_vault_keys) | **GET** /vault/subscriptions/{subscriptionid}/encryptionkeys | 
 *OmniCoreClient::VaultApi* | [**get_vault_metrics**](docs/VaultApi.md#get_vault_metrics) | **GET** /vault/subscriptions/{subscriptionid}/metrics | 
 *OmniCoreClient::VaultApi* | [**get_vault_status**](docs/VaultApi.md#get_vault_status) | **GET** /vault/subscriptions/{subscriptionid}/status | 
+*OmniCoreClient::VaultApi* | [**set_retention**](docs/VaultApi.md#set_retention) | **POST** /vault/subscriptions/{subscriptionid}/retention | 
 *OmniCoreClient::VaultApi* | [**start_export**](docs/VaultApi.md#start_export) | **POST** /vault/subscriptions/{subscriptionid}/exports | 
 *OmniCoreClient::VaultApi* | [**start_replay**](docs/VaultApi.md#start_replay) | **POST** /vault/subscriptions/{subscriptionid}/replays | 
 
@@ -151,6 +153,7 @@ Class | Method | HTTP request | Description
  - [OmniCoreClient::DeviceCredential](docs/DeviceCredential.md)
  - [OmniCoreClient::DeviceRegistry](docs/DeviceRegistry.md)
  - [OmniCoreClient::DeviceState](docs/DeviceState.md)
+ - [OmniCoreClient::EnableEncryptionBody](docs/EnableEncryptionBody.md)
  - [OmniCoreClient::ErrorFrame](docs/ErrorFrame.md)
  - [OmniCoreClient::ErrorStatus](docs/ErrorStatus.md)
  - [OmniCoreClient::EventNotificationConfig](docs/EventNotificationConfig.md)
@@ -188,6 +191,7 @@ Class | Method | HTTP request | Description
  - [OmniCoreClient::RegistryCredential](docs/RegistryCredential.md)
  - [OmniCoreClient::Replay](docs/Replay.md)
  - [OmniCoreClient::ReplayBody](docs/ReplayBody.md)
+ - [OmniCoreClient::SetRetentionBody](docs/SetRetentionBody.md)
  - [OmniCoreClient::Sink](docs/Sink.md)
  - [OmniCoreClient::StartExportBody](docs/StartExportBody.md)
  - [OmniCoreClient::VaultConfiguration](docs/VaultConfiguration.md)
