@@ -13,6 +13,7 @@ All URIs are relative to *https://api.korewireless.com*
 | [**get_device**](DeviceApi.md#get_device) | **GET** /omnicore/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} |  |
 | [**get_devices**](DeviceApi.md#get_devices) | **GET** /omnicore/subscriptions/{subscriptionId}/registries/{registryId}/devices |  |
 | [**get_states**](DeviceApi.md#get_states) | **GET** /omnicore/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states |  |
+| [**get_subscription_devices**](DeviceApi.md#get_subscription_devices) | **GET** /omnicore/subscriptions/{subscriptionId}/devices |  |
 | [**send_command_to_device**](DeviceApi.md#send_command_to_device) | **POST** /omnicore/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice |  |
 | [**un_bind_device**](DeviceApi.md#un_bind_device) | **POST** /omnicore/subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway |  |
 | [**un_bind_devices**](DeviceApi.md#un_bind_devices) | **POST** /omnicore/subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway |  |
@@ -738,6 +739,100 @@ end
 ### Return type
 
 [**ListDeviceStatesResponse**](ListDeviceStatesResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_subscription_devices
+
+> <ListDevicesOnlineResponse> get_subscription_devices(subscription_id, opts)
+
+
+
+Get all devices under a subscription
+
+### Examples
+
+```ruby
+require 'time'
+require 'omnicore_client'
+# setup authorization
+OmniCoreClient.configure do |config|
+  # Configure API key authorization: apiKey
+  config.api_key['apiKey'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['apiKey'] = 'Bearer'
+
+  # Configure Bearer authorization (JWT): bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = OmniCoreClient::DeviceApi.new
+subscription_id = 'subscription_id_example' # String | Subscription ID
+opts = {
+  page_number: 56, # Integer | Page Number
+  page_size: 56, # Integer | The maximum number of devices to return in the response. If this value is zero, the service will select a default size. 
+  field_mask: 'field_mask_example', # String | The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example: 
+  sort_by_client_online: true, # Boolean | Set to true to return devices sorted by last heartbeat 
+  device_ids: ['inner_example'], # Array<String> | A list of device string IDs. For example, ['device0', 'device12']. If empty, this field is ignored. Maximum IDs: 10,000
+  device_num_ids: ['inner_example'], # Array<String> | A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000.
+  gateway_list_options_associations_device_id: 'gateway_list_options_associations_device_id_example', # String | If set, returns only the gateways with which the specified device is associated. The device ID can be numeric (num_id) or the user-defined string (id). For example, if 456 is specified, returns only the gateways to which the device with num_id 456 is bound.
+  gateway_list_options_associations_gateway_id: 'gateway_list_options_associations_gateway_id_example', # String | If set, only devices associated with the specified gateway are returned. The gateway ID can be numeric (num_id) or the user-defined string (id). For example, if 123 is specified, only devices bound to the gateway with num_id 123 are returned
+  gateway_list_options_gateway_type: 'gateway_list_options_gateway_type_example' # String | If GATEWAY is specified, only gateways are returned. If NON_GATEWAY is specified, only non-gateway devices are returned. If GATEWAY_TYPE_UNSPECIFIED is specified, all devices are returned.
+}
+
+begin
+  
+  result = api_instance.get_subscription_devices(subscription_id, opts)
+  p result
+rescue OmniCoreClient::ApiError => e
+  puts "Error when calling DeviceApi->get_subscription_devices: #{e}"
+end
+```
+
+#### Using the get_subscription_devices_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ListDevicesOnlineResponse>, Integer, Hash)> get_subscription_devices_with_http_info(subscription_id, opts)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.get_subscription_devices_with_http_info(subscription_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ListDevicesOnlineResponse>
+rescue OmniCoreClient::ApiError => e
+  puts "Error when calling DeviceApi->get_subscription_devices_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **subscription_id** | **String** | Subscription ID |  |
+| **page_number** | **Integer** | Page Number | [optional] |
+| **page_size** | **Integer** | The maximum number of devices to return in the response. If this value is zero, the service will select a default size.  | [optional] |
+| **field_mask** | **String** | The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example:  | [optional] |
+| **sort_by_client_online** | **Boolean** | Set to true to return devices sorted by last heartbeat  | [optional] |
+| **device_ids** | [**Array&lt;String&gt;**](String.md) | A list of device string IDs. For example, [&#39;device0&#39;, &#39;device12&#39;]. If empty, this field is ignored. Maximum IDs: 10,000 | [optional] |
+| **device_num_ids** | [**Array&lt;String&gt;**](String.md) | A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000. | [optional] |
+| **gateway_list_options_associations_device_id** | **String** | If set, returns only the gateways with which the specified device is associated. The device ID can be numeric (num_id) or the user-defined string (id). For example, if 456 is specified, returns only the gateways to which the device with num_id 456 is bound. | [optional] |
+| **gateway_list_options_associations_gateway_id** | **String** | If set, only devices associated with the specified gateway are returned. The gateway ID can be numeric (num_id) or the user-defined string (id). For example, if 123 is specified, only devices bound to the gateway with num_id 123 are returned | [optional] |
+| **gateway_list_options_gateway_type** | **String** | If GATEWAY is specified, only gateways are returned. If NON_GATEWAY is specified, only non-gateway devices are returned. If GATEWAY_TYPE_UNSPECIFIED is specified, all devices are returned. | [optional] |
+
+### Return type
+
+[**ListDevicesOnlineResponse**](ListDevicesOnlineResponse.md)
 
 ### Authorization
 

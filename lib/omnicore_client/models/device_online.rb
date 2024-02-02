@@ -14,34 +14,25 @@ require 'date'
 require 'time'
 
 module OmniCoreClient
-  class MetricsResponseDetails
-    attr_accessor :subscription_id
+  class DeviceOnline
+    attr_accessor :id
 
-    attr_accessor :no_of_files
+    attr_accessor :registry
 
-    attr_accessor :file_size
+    attr_accessor :client_online
 
-    attr_accessor :noofoperations
+    attr_accessor :last_heartbeat_time
 
-    attr_accessor :no_of_replays
-
-    attr_accessor :no_of_exports
-
-    attr_accessor :operations
-
-    attr_accessor :details_for_time_period
+    attr_accessor :subscription
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'subscription_id' => :'subscriptionId',
-        :'no_of_files' => :'noOfFiles',
-        :'file_size' => :'fileSize',
-        :'noofoperations' => :'noofoperations',
-        :'no_of_replays' => :'noOfReplays',
-        :'no_of_exports' => :'noOfExports',
-        :'operations' => :'Operations',
-        :'details_for_time_period' => :'detailsForTimePeriod'
+        :'id' => :'id',
+        :'registry' => :'registry',
+        :'client_online' => :'clientOnline',
+        :'last_heartbeat_time' => :'lastHeartbeatTime',
+        :'subscription' => :'subscription'
       }
     end
 
@@ -53,14 +44,11 @@ module OmniCoreClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'subscription_id' => :'String',
-        :'no_of_files' => :'Integer',
-        :'file_size' => :'Float',
-        :'noofoperations' => :'Integer',
-        :'no_of_replays' => :'Integer',
-        :'no_of_exports' => :'Integer',
-        :'operations' => :'Array<OperationMetrics>',
-        :'details_for_time_period' => :'MetricsData'
+        :'id' => :'String',
+        :'registry' => :'String',
+        :'client_online' => :'Boolean',
+        :'last_heartbeat_time' => :'String',
+        :'subscription' => :'String'
       }
     end
 
@@ -74,49 +62,35 @@ module OmniCoreClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `OmniCoreClient::MetricsResponseDetails` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `OmniCoreClient::DeviceOnline` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `OmniCoreClient::MetricsResponseDetails`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `OmniCoreClient::DeviceOnline`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'subscription_id')
-        self.subscription_id = attributes[:'subscription_id']
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'no_of_files')
-        self.no_of_files = attributes[:'no_of_files']
+      if attributes.key?(:'registry')
+        self.registry = attributes[:'registry']
       end
 
-      if attributes.key?(:'file_size')
-        self.file_size = attributes[:'file_size']
+      if attributes.key?(:'client_online')
+        self.client_online = attributes[:'client_online']
       end
 
-      if attributes.key?(:'noofoperations')
-        self.noofoperations = attributes[:'noofoperations']
+      if attributes.key?(:'last_heartbeat_time')
+        self.last_heartbeat_time = attributes[:'last_heartbeat_time']
       end
 
-      if attributes.key?(:'no_of_replays')
-        self.no_of_replays = attributes[:'no_of_replays']
-      end
-
-      if attributes.key?(:'no_of_exports')
-        self.no_of_exports = attributes[:'no_of_exports']
-      end
-
-      if attributes.key?(:'operations')
-        if (value = attributes[:'operations']).is_a?(Array)
-          self.operations = value
-        end
-      end
-
-      if attributes.key?(:'details_for_time_period')
-        self.details_for_time_period = attributes[:'details_for_time_period']
+      if attributes.key?(:'subscription')
+        self.subscription = attributes[:'subscription']
       end
     end
 
@@ -124,13 +98,46 @@ module OmniCoreClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @id.nil?
+        invalid_properties.push('invalid value for "id", id cannot be nil.')
+      end
+
+      if @id.to_s.length > 256
+        invalid_properties.push('invalid value for "id", the character length must be smaller than or equal to 256.')
+      end
+
+      if @id.to_s.length < 3
+        invalid_properties.push('invalid value for "id", the character length must be great than or equal to 3.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @id.nil?
+      return false if @id.to_s.length > 256
+      return false if @id.to_s.length < 3
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] id Value to be assigned
+    def id=(id)
+      if id.nil?
+        fail ArgumentError, 'id cannot be nil'
+      end
+
+      if id.to_s.length > 256
+        fail ArgumentError, 'invalid value for "id", the character length must be smaller than or equal to 256.'
+      end
+
+      if id.to_s.length < 3
+        fail ArgumentError, 'invalid value for "id", the character length must be great than or equal to 3.'
+      end
+
+      @id = id
     end
 
     # Checks equality by comparing each attribute.
@@ -138,14 +145,11 @@ module OmniCoreClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          subscription_id == o.subscription_id &&
-          no_of_files == o.no_of_files &&
-          file_size == o.file_size &&
-          noofoperations == o.noofoperations &&
-          no_of_replays == o.no_of_replays &&
-          no_of_exports == o.no_of_exports &&
-          operations == o.operations &&
-          details_for_time_period == o.details_for_time_period
+          id == o.id &&
+          registry == o.registry &&
+          client_online == o.client_online &&
+          last_heartbeat_time == o.last_heartbeat_time &&
+          subscription == o.subscription
     end
 
     # @see the `==` method
@@ -157,7 +161,7 @@ module OmniCoreClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [subscription_id, no_of_files, file_size, noofoperations, no_of_replays, no_of_exports, operations, details_for_time_period].hash
+      [id, registry, client_online, last_heartbeat_time, subscription].hash
     end
 
     # Builds the object from hash

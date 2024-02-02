@@ -14,34 +14,22 @@ require 'date'
 require 'time'
 
 module OmniCoreClient
-  class MetricsResponseDetails
-    attr_accessor :subscription_id
+  class ListDevicesOnlineResponse
+    attr_accessor :devices
 
-    attr_accessor :no_of_files
+    attr_accessor :page_number
 
-    attr_accessor :file_size
+    attr_accessor :page_size
 
-    attr_accessor :noofoperations
-
-    attr_accessor :no_of_replays
-
-    attr_accessor :no_of_exports
-
-    attr_accessor :operations
-
-    attr_accessor :details_for_time_period
+    attr_accessor :total_count
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'subscription_id' => :'subscriptionId',
-        :'no_of_files' => :'noOfFiles',
-        :'file_size' => :'fileSize',
-        :'noofoperations' => :'noofoperations',
-        :'no_of_replays' => :'noOfReplays',
-        :'no_of_exports' => :'noOfExports',
-        :'operations' => :'Operations',
-        :'details_for_time_period' => :'detailsForTimePeriod'
+        :'devices' => :'devices',
+        :'page_number' => :'pageNumber',
+        :'page_size' => :'pageSize',
+        :'total_count' => :'totalCount'
       }
     end
 
@@ -53,14 +41,10 @@ module OmniCoreClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'subscription_id' => :'String',
-        :'no_of_files' => :'Integer',
-        :'file_size' => :'Float',
-        :'noofoperations' => :'Integer',
-        :'no_of_replays' => :'Integer',
-        :'no_of_exports' => :'Integer',
-        :'operations' => :'Array<OperationMetrics>',
-        :'details_for_time_period' => :'MetricsData'
+        :'devices' => :'Array<DeviceOnline>',
+        :'page_number' => :'Integer',
+        :'page_size' => :'Integer',
+        :'total_count' => :'Integer'
       }
     end
 
@@ -74,49 +58,33 @@ module OmniCoreClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `OmniCoreClient::MetricsResponseDetails` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `OmniCoreClient::ListDevicesOnlineResponse` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `OmniCoreClient::MetricsResponseDetails`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `OmniCoreClient::ListDevicesOnlineResponse`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'subscription_id')
-        self.subscription_id = attributes[:'subscription_id']
-      end
-
-      if attributes.key?(:'no_of_files')
-        self.no_of_files = attributes[:'no_of_files']
-      end
-
-      if attributes.key?(:'file_size')
-        self.file_size = attributes[:'file_size']
-      end
-
-      if attributes.key?(:'noofoperations')
-        self.noofoperations = attributes[:'noofoperations']
-      end
-
-      if attributes.key?(:'no_of_replays')
-        self.no_of_replays = attributes[:'no_of_replays']
-      end
-
-      if attributes.key?(:'no_of_exports')
-        self.no_of_exports = attributes[:'no_of_exports']
-      end
-
-      if attributes.key?(:'operations')
-        if (value = attributes[:'operations']).is_a?(Array)
-          self.operations = value
+      if attributes.key?(:'devices')
+        if (value = attributes[:'devices']).is_a?(Array)
+          self.devices = value
         end
       end
 
-      if attributes.key?(:'details_for_time_period')
-        self.details_for_time_period = attributes[:'details_for_time_period']
+      if attributes.key?(:'page_number')
+        self.page_number = attributes[:'page_number']
+      end
+
+      if attributes.key?(:'page_size')
+        self.page_size = attributes[:'page_size']
+      end
+
+      if attributes.key?(:'total_count')
+        self.total_count = attributes[:'total_count']
       end
     end
 
@@ -124,12 +92,17 @@ module OmniCoreClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @devices.nil?
+        invalid_properties.push('invalid value for "devices", devices cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @devices.nil?
       true
     end
 
@@ -138,14 +111,10 @@ module OmniCoreClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          subscription_id == o.subscription_id &&
-          no_of_files == o.no_of_files &&
-          file_size == o.file_size &&
-          noofoperations == o.noofoperations &&
-          no_of_replays == o.no_of_replays &&
-          no_of_exports == o.no_of_exports &&
-          operations == o.operations &&
-          details_for_time_period == o.details_for_time_period
+          devices == o.devices &&
+          page_number == o.page_number &&
+          page_size == o.page_size &&
+          total_count == o.total_count
     end
 
     # @see the `==` method
@@ -157,7 +126,7 @@ module OmniCoreClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [subscription_id, no_of_files, file_size, noofoperations, no_of_replays, no_of_exports, operations, details_for_time_period].hash
+      [devices, page_number, page_size, total_count].hash
     end
 
     # Builds the object from hash

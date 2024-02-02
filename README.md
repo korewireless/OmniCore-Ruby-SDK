@@ -5,7 +5,7 @@ OmniCoreClient - the Ruby gem for the OmniCore Model and State Management API
 This is an OmniCore Model and State Management server.
 
 
-- API version: 1.8.7
+- API version: 1.8.10
 - Package version: {_PACKAGE_VERSION}
 - Build package: org.openapitools.codegen.languages.RubyClientCodegen
 For more information, please visit [http://www.korewireless.com](http://www.korewireless.com)
@@ -98,6 +98,7 @@ Class | Method | HTTP request | Description
 *OmniCoreClient::DeviceApi* | [**get_device**](docs/DeviceApi.md#get_device) | **GET** /omnicore/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
 *OmniCoreClient::DeviceApi* | [**get_devices**](docs/DeviceApi.md#get_devices) | **GET** /omnicore/subscriptions/{subscriptionId}/registries/{registryId}/devices | 
 *OmniCoreClient::DeviceApi* | [**get_states**](docs/DeviceApi.md#get_states) | **GET** /omnicore/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states | 
+*OmniCoreClient::DeviceApi* | [**get_subscription_devices**](docs/DeviceApi.md#get_subscription_devices) | **GET** /omnicore/subscriptions/{subscriptionId}/devices | 
 *OmniCoreClient::DeviceApi* | [**send_command_to_device**](docs/DeviceApi.md#send_command_to_device) | **POST** /omnicore/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice | 
 *OmniCoreClient::DeviceApi* | [**un_bind_device**](docs/DeviceApi.md#un_bind_device) | **POST** /omnicore/subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway | 
 *OmniCoreClient::DeviceApi* | [**un_bind_devices**](docs/DeviceApi.md#un_bind_devices) | **POST** /omnicore/subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway | 
@@ -151,6 +152,7 @@ Class | Method | HTTP request | Description
  - [OmniCoreClient::DeviceConfig](docs/DeviceConfig.md)
  - [OmniCoreClient::DeviceConfiguration](docs/DeviceConfiguration.md)
  - [OmniCoreClient::DeviceCredential](docs/DeviceCredential.md)
+ - [OmniCoreClient::DeviceOnline](docs/DeviceOnline.md)
  - [OmniCoreClient::DeviceRegistry](docs/DeviceRegistry.md)
  - [OmniCoreClient::DeviceState](docs/DeviceState.md)
  - [OmniCoreClient::EnableEncryptionBody](docs/EnableEncryptionBody.md)
@@ -173,6 +175,7 @@ Class | Method | HTTP request | Description
  - [OmniCoreClient::ListDeviceConfigVersionsResponse](docs/ListDeviceConfigVersionsResponse.md)
  - [OmniCoreClient::ListDeviceRegistries](docs/ListDeviceRegistries.md)
  - [OmniCoreClient::ListDeviceStatesResponse](docs/ListDeviceStatesResponse.md)
+ - [OmniCoreClient::ListDevicesOnlineResponse](docs/ListDevicesOnlineResponse.md)
  - [OmniCoreClient::ListDevicesResponse](docs/ListDevicesResponse.md)
  - [OmniCoreClient::ListSinks](docs/ListSinks.md)
  - [OmniCoreClient::LogLevel](docs/LogLevel.md)
